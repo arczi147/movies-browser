@@ -1,13 +1,15 @@
 import Header from "../../common/Header";
 import MovieTile from "../../common/MovieTile";
-import { StyledHeader } from "./styled";
+import { StyledHeader, MoviesGrid } from "./styled";
 
 const Movies = () => (
   <>
     <StyledHeader>
       <Header text="Popular movies" />
     </StyledHeader>
-    <MovieTile />
+    <MoviesGrid>
+      <MovieTile />
+    </MoviesGrid>
   </>
 );
 
