@@ -1,19 +1,18 @@
 import {
   StyledNavigation,
-  List,
-  StyledHeader,
+  Header,
   Logo,
   Caption,
+  List,
   PageLink,
-  SearchBar,
 } from "./styled";
 
 const Navigation = () => (
   <StyledNavigation>
-    <StyledHeader>
+    <Header>
       <Logo />
       <Caption>Movies Browser</Caption>
-    </StyledHeader>
+    </Header>
     <List>
       <li>
         <PageLink>Movies</PageLink>
@@ -22,8 +21,7 @@ const Navigation = () => (
         <PageLink>People</PageLink>
       </li>
     </List>
-    <SearchBar />
   </StyledNavigation>
 );
 
-export default Navigation
+export default Navigation;

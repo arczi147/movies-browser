@@ -1,9 +1,9 @@
-import Navigation from "./common/Navigation";
+import NavigationBar from "./common/NavigationBar";
 
 function App() {
   return (
     <>
-      <Navigation />
+      <NavigationBar />
     </>
   );
 }
