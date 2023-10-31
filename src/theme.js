@@ -5,6 +5,7 @@ export const theme = {
     white: "#FFFFFF",
     waterloo: "#7E839A",
     mystic: "#E4E6F0",
+    silver: "#C4C4C4",
   },
 
   breakpoints: {

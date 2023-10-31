@@ -1,6 +1,6 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import NavigationBar from "./common/NavigationBar";
-import Movies from "./features/movieList/Movies";
+import Movies from "./features/movieList";
 import { Wrapper } from "./styled";
 
 function App() {
