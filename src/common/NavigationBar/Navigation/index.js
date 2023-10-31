@@ -9,16 +9,16 @@ import {
 
 const Navigation = () => (
   <StyledNavigation>
-    <Header>
+    <Header to="/movies">
       <Logo />
       <Caption>Movies Browser</Caption>
     </Header>
     <List>
       <li>
-        <PageLink>Movies</PageLink>
+        <PageLink to="/movies">Movies</PageLink>
       </li>
       <li>
-        <PageLink>People</PageLink>
+        <PageLink to="/people">People</PageLink>
       </li>
     </List>
   </StyledNavigation>

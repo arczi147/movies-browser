@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { ReactComponent as LogoIcon } from "../../../images/logo.svg";
 
-export const StyledNavigation = styled.div`
+export const StyledNavigation = styled.nav`
   display: flex;
   gap: 80px;
 
@@ -13,12 +14,15 @@ export const StyledNavigation = styled.div`
 
 export const List = styled.ul`
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 12px;
   list-style: none;
   padding: 0;
 `;
 
-export const Header = styled.div`
+export const Header = styled(NavLink)`
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -53,14 +57,15 @@ export const Caption = styled.h1`
   };
 `;
 
-export const PageLink = styled.div`
+export const PageLink = styled(NavLink)`
   color: ${({ theme }) => theme.color.white};
+  text-decoration: none;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
   padding: 14px 24px;
 
-  &:active {
+  &.active {
     border: 1px solid ${({ theme }) => theme.color.white};
     border-radius: 24px;
   };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledNavigationBar = styled.nav`
+export const StyledNavigationBar = styled.div`
   background: ${({ theme }) => theme.color.woodsmoke};
 `;
 
