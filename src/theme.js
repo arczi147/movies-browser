@@ -9,8 +9,9 @@ export const theme = {
   },
 
   breakpoints: {
-    smallMobile: "676px",
-    mobile: "979px",
-    narrow: "1199px",
+    smallMobile: "580px",
+    mobile: "767px",
+    tablet: "979px",
+    narrow: "1200px",
   },
 };

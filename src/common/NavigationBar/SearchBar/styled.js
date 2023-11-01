@@ -14,7 +14,11 @@ export const StyledSearchBar = styled.div`
   gap: 16px;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin: 0 0 16px;
+  };
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     margin: 0 0 12px;
   };
 `;
@@ -23,7 +27,7 @@ export const Icon = styled(SearchIcon)`
   height: 24px;
   width: 24px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 16px;
     width: 16px;
   };
@@ -40,7 +44,7 @@ export const Input = styled.input`
     outline: none;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 13px;
   };
 `;

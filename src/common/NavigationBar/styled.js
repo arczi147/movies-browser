@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   margin: auto;
   padding: 0 52px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: flex;
     flex-direction: column;
     padding: 0 16px;

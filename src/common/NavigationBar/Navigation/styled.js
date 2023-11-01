@@ -6,7 +6,7 @@ export const StyledNavigation = styled.nav`
   display: flex;
   gap: 80px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: 19px;
     margin-bottom: 12px;
   };
@@ -28,7 +28,7 @@ export const Header = styled(NavLink)`
   align-items: center;
   gap: 12px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: 8px;
   };
 `;
@@ -37,7 +37,7 @@ export const Logo = styled(LogoIcon)`
   height: 40px;
   width: 40px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 17px;
     width: 17px;
   };
@@ -50,7 +50,7 @@ export const Caption = styled.h1`
   letter-spacing: -1.5px;
   width: 168px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 13px;
     letter-spacing: -0.5px;
     width: 95px;
@@ -70,7 +70,7 @@ export const PageLink = styled(NavLink)`
     border-radius: 24px;
   };
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 12px;
     padding: 8px 12px;
   };

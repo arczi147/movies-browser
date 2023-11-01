@@ -3,6 +3,7 @@ import { ReactComponent as RatingStar } from "../../images/rating.svg"
 
 export const Container = styled.div`
   max-height: auto;
+  max-width: 324px;
   border-radius: 5px;
   padding: 16px;
   background: ${({ theme }) => theme.color.white};
@@ -12,6 +13,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     gap: 16px;
+    max-width: 100%;
   };
 `;
 
@@ -48,7 +50,7 @@ export const Title = styled.h2`
   margin: 14px 0 8px;
   word-wrap: break-word;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 16px;
   };
 `;
@@ -85,7 +87,7 @@ export const Tag = styled.li`
   border-radius: 5px;
   padding: 8px 16px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 10px;
     padding: 4px 8px;
   };
@@ -105,7 +107,7 @@ export const RatingIcon = styled(RatingStar)`
   height: 24px;
   width: 24px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 16px;
     width: 16px;
   };
@@ -117,7 +119,7 @@ export const Rating = styled.p`
   font-weight: 600;
   line-height: 150%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 13px;
   };
 `;
@@ -125,7 +127,7 @@ export const Rating = styled.p`
 export const Votes = styled.p`
   color: ${({ theme }) => theme.color.waterloo};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 13px;
   };
 `; 

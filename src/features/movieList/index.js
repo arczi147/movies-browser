@@ -9,6 +9,16 @@ const Movies = () => (
     </StyledHeader>
     <MoviesGrid>
       <MovieTile />
+      <MovieTile />
+      <MovieTile />
+      <MovieTile />
+      <MovieTile />
+      <MovieTile />
+      <MovieTile />
+      <MovieTile />
+      <MovieTile />
+      <MovieTile />
+      <MovieTile />
     </MoviesGrid>
   </>
 );
