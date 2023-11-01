@@ -64,10 +64,16 @@ export const PageLink = styled(NavLink)`
   font-size: 14px;
   text-transform: uppercase;
   padding: 14px 24px;
+  border-radius: 24px;
+  border: 1px solid ${({ theme }) => theme.color.woodsmoke};
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.waterloo};
+  };
 
   &.active {
-    border: 1px solid ${({ theme }) => theme.color.white};
-    border-radius: 24px;
+    border-color: ${({ theme }) => theme.color.white};
   };
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {

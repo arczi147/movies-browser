@@ -8,7 +8,13 @@ export const Container = styled.div`
   padding: 16px;
   background: ${({ theme }) => theme.color.white};
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
+  transition: transform 0.3s ease;
 
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-8px);
+  };
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     display: flex;
     flex-direction: row;
