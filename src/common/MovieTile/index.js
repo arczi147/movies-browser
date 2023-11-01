@@ -1,8 +1,10 @@
 import poster from "../../images/example-poster.png";
+import noPoster from "../../images/no-poster.svg"
 import {
   Container,
   MovieDataContainer,
   Poster,
+  NoPoster,
   Info,
   Title,
   Year,
@@ -17,16 +19,17 @@ import {
 const MovieTile = ({ title, year, genre, rating, votes }) => (
     <Container>
       <Poster src={poster} alt="Poster" />
+      {/* <NoPoster src={noPoster} alt="Logo" /> */}
       <MovieDataContainer>
         <Info>
-          <Title>
+        <Title>
             {/* {title} */} Mulan
           </Title>
           <Year>
             {/* {year} */} 2020
           </Year>
           <GenreTags>
-            <Tag>
+          <Tag>
               {/* {genre} */}Action
             </Tag>
             <Tag>

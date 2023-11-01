@@ -12,13 +12,6 @@ const Movies = () => (
       <MovieTile />
       <MovieTile />
       <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
     </MoviesGrid>
   </>
 );

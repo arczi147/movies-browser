@@ -37,6 +37,25 @@ export const Poster = styled.img`
   };
 `;
 
+export const NoPoster = styled.img`
+  border-radius: 5px;
+  max-width: 292px;
+  max-height: 434px;
+  width: 100%;
+  margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    font-size: 13px;
+    width: 45%;
+  };
+`;
+
+export const LogoImage = styled.img`
+  width: 120px;
+  height: 120px;
+  margin: auto;
+`;
+
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
@@ -101,6 +120,10 @@ export const Stats = styled.div`
   gap: 12px;
   padding: 26px 0 0;
   margin: auto 0 15px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    gap: 7px
+  }
 `;
 
 export const RatingIcon = styled(RatingStar)`
@@ -110,6 +133,7 @@ export const RatingIcon = styled(RatingStar)`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 16px;
     width: 16px;
+    margin-right: 1px;
   };
 `;
 
