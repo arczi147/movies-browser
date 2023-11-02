@@ -1,6 +1,7 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import NavigationBar from "./common/NavigationBar";
 import Movies from "./features/movieList";
+import PopularPeople from "./features/personList";
 import { Wrapper } from "./styled";
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
         <Wrapper>
           <Route path="/movies">
             <Movies />
+          </Route>
+          <Route path="/people">
+            <PopularPeople />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />
