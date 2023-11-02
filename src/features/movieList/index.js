@@ -1,6 +1,7 @@
 import Header from "../../common/Header";
 import MovieTile from "../../common/MovieTile";
-import { StyledHeader, MoviesGrid } from "./styled";
+import { MoviesGrid } from "../../common/MovieTile/styled";
+import { StyledHeader} from "./styled";
 
 const Movies = () => (
   <>
