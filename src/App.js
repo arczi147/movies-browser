@@ -3,6 +3,7 @@ import NavigationBar from "./common/NavigationBar";
 import Movies from "./features/movieList";
 import Person from "./features/personPage";
 import { Wrapper } from "./styled";
+import Movie from "./features/moviePage";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           </Route>
           <Route path="/person">
             <Person />
+          </Route>
+          <Route path="/movie">
+            <Movie />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />
