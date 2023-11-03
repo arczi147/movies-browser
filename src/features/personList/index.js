@@ -1,5 +1,6 @@
 import Header from "../../common/Header";
-import { StyledHeader, PeopleGrid } from "./styled";
+import { StyledHeader } from "./styled";
+import { PeopleGrid } from "../../common/PersonTile/styled";
 import PersonTile from "../../common/PersonTile";
 import Pagination from "../../common/Pagination";
 
