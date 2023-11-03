@@ -1,5 +1,5 @@
 import { Container, PersonDataContainer, PersonPhoto, Name, Character } from "./styled";
-import personPhoto from "../../../images/example-person.png";
+import personPhoto from "../../images/example-person.png";
 
 const PersonTile = () => (
     <Container>

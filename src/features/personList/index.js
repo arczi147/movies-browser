@@ -1,6 +1,6 @@
 import Header from "../../common/Header";
 import { StyledHeader, PeopleGrid } from "./styled";
-import PersonTile from "./PersonTile";
+import PersonTile from "../../common/PersonTile";
 import Pagination from "../../common/Pagination";
 
 const PopularPeople = () => (
