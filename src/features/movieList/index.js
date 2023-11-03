@@ -1,7 +1,8 @@
 import Header from "../../common/Header";
 import MovieTile from "../../common/MovieTile";
 import Pagination from "../../common/Pagination";
-import { StyledHeader, MoviesGrid } from "./styled";
+import { MoviesGrid } from "../../common/MovieTile/styled";
+import { StyledHeader } from "./styled";
 
 const Movies = () => (
   <>

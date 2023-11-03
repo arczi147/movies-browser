@@ -20,6 +20,12 @@ const Navigation = () => (
       <li>
         <PageLink to="/people">People</PageLink>
       </li>
+      <li>
+        <PageLink to="/person">Person</PageLink>
+      </li>
+      <li>
+        <PageLink to="/movie">Movie</PageLink>
+      </li>
     </List>
   </StyledNavigation>
 );
