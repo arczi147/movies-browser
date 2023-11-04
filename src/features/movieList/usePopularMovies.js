@@ -11,7 +11,6 @@ export const usePopularMovies = () => {
       const getPopularMovies = async () => {
         try {
           const response = await fetchAPI(popularMoviesURL);
-          console.log(response);
           setPopularMovies(response);
           setLoading(false);
         } catch (error) {

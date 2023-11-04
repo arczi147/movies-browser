@@ -9,7 +9,6 @@ export const useGenres = () => {
     const getGenres = async () => {
       try {
         const response = await fetchAPI(genresURL);
-				console.log(response);
         setGenres(response);
       } catch (error) {
         console.error(error);
