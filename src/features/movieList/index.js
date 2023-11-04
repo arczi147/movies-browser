@@ -11,13 +11,6 @@ const Movies = () => {
   const { genres } = useGenres();
   const movies = popularMovies.results;
 
-  const mapGenreIdsToNames = (genreIds) => {
-    return genreIds.map((id) => {
-      const genre = genres.genres.find((genre) => genre.id === id);
-      return genre ? genre.name : "Unknown";
-    });
-  };
-
   if (loading) {
     return "Here comes the loading component";
   }
@@ -38,7 +31,10 @@ const Movies = () => {
             poster={movie.poster_path}
             title={movie.title}
             year={movie.release_date}
-            genre={mapGenreIdsToNames(movie.genre_ids).join(", ")}
+            genre={movie.genre_ids.map((id) =>
+              genres.genres.find((genre) =>
+                genre.id === id).name
+            )}
             rating={movie.vote_average}
             votes={movie.vote_count}
           />

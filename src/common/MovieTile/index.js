@@ -32,7 +32,9 @@ const MovieTile = ({ poster, title, year, genre, rating, votes }) => (
         <Title>{title}</Title>
         <Year>{new Date(year).getFullYear()}</Year>
         <GenreTags>
-          <Tag>{genre}</Tag>
+          {genre.map((genreName, index) => (
+            <Tag key={index}>{genreName}</Tag>
+          ))}
         </GenreTags>
       </Info>
       <Stats>
