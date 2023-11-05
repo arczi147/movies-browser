@@ -3,43 +3,36 @@ import NavigationBar from "./common/NavigationBar";
 import Movies from "./features/movieList";
 import PopularPeople from "./features/personList";
 import Person from "./features/personPage";
-import { Wrapper } from "./styled";
 import Movie from "./features/moviePage";
-import Error from "./features/Error";
 import NoResult from "./features/NoResult";
-import Loading from "./features/Loading";
+import Error from "./features/movieList/Error";
 
 function App() {
   return (
     <HashRouter>
       <NavigationBar />
       <Switch>
-        <Wrapper>
-          <Route path="/movies">
-            <Movies />
-          </Route>
-          <Route path="/people">
-            <PopularPeople />
-          </Route>
-          <Route path="/person">
-            <Person />
-          </Route>
-          <Route path="/movie">
-            <Movie />
-          </Route>
-          <Route path="/error">
-            <Error />
-          </Route>
-          <Route path="/noresult">
-            <NoResult />
-          </Route>
-          <Route path="/loading">
-            <Loading />
-          </Route>
-          <Route path="/">
-            <Redirect to="/movies" />
-          </Route>
-        </Wrapper>
+        <Route path="/movies">
+          <Movies />
+        </Route>
+        <Route path="/people">
+          <PopularPeople />
+        </Route>
+        <Route path="/person">
+          <Person />
+        </Route>
+        <Route path="/movie">
+          <Movie />
+        </Route>
+        <Route path="/noresult">
+          <NoResult />
+        </Route>
+        <Route path="/error">
+          <Error />
+        </Route>
+        <Route path="/">
+          <Redirect to="/movies" />
+        </Route>
       </Switch>
     </HashRouter>
   );

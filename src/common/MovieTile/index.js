@@ -1,5 +1,5 @@
-import poster from "../../images/example-poster.png";
 import noPoster from "../../images/no-poster.svg"
+import { imageURL } from "../API/APIData";
 import {
   Container,
   MovieDataContainer,
@@ -16,41 +16,34 @@ import {
   Votes,
 } from "./styled";
 
-const MovieTile = ({ title, year, genre, rating, votes }) => (
-    <Container>
-      <Poster src={poster} alt="Poster" />
-      {/* <NoPoster src={noPoster} alt="Logo" /> */}
-      <MovieDataContainer>
-        <Info>
-        <Title>
-            {/* {title} */} Mulan
-          </Title>
-          <Year>
-            {/* {year} */} 2020
-          </Year>
-          <GenreTags>
-          <Tag>
-              {/* {genre} */}Action
-            </Tag>
-            <Tag>
-              {/* {genre} */}Adventure
-            </Tag>
-            <Tag>
-              {/* {genre} */}Drama
-            </Tag>
-          </GenreTags>
-        </Info>
-        <Stats>
-          <RatingIcon />
-          <Rating>
-            {/* {rating} */}7,8
-          </Rating>
-          <Votes>
-            {/* {votes} */}35 votes
-          </Votes>
-        </Stats>
-      </MovieDataContainer>
-    </Container>
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
+};
+
+const MovieTile = ({ poster, title, year, genre, rating, votes }) => (
+  <Container>
+    {poster ? (
+      <Poster src={imageURL + poster} alt="Poster" />
+    ) : (
+      <NoPoster src={noPoster} alt="Logo" />
+    )}
+    <MovieDataContainer>
+      <Info>
+        <Title>{title}</Title>
+        <Year>{new Date(year).getFullYear()}</Year>
+        <GenreTags>
+          {genre.map((genreName, index) => (
+            <Tag key={index}>{genreName}</Tag>
+          ))}
+        </GenreTags>
+      </Info>
+      <Stats>
+        <RatingIcon />
+        <Rating>{rating.toFixed(1)}</Rating>
+        <Votes>{formatNumber(votes)} votes</Votes>
+      </Stats>
+    </MovieDataContainer>
+  </Container>
 );
 
 export default MovieTile;

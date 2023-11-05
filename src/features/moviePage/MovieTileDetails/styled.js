@@ -2,10 +2,9 @@ import styled from "styled-components";
 import { ReactComponent as RatingStar } from "../../../images/rating.svg"
 
 export const Container = styled.div`
-    max-width: 1368px;
+    max-width: 100%;
     padding: 40px;
-    margin-top: 56px;
-    margin-bottom: 56px;
+    margin: 0;
     gap: 40px;
     background: ${({ theme }) => theme.color.white};
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
@@ -13,8 +12,8 @@ export const Container = styled.div`
     flex-direction: row;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        padding: 16px;
         gap: 16px;
-        max-width: 100%;
         flex-wrap: wrap;
     };
 `;

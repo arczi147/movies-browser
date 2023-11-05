@@ -65,11 +65,11 @@ export const PageLink = styled(NavLink)`
   text-transform: uppercase;
   padding: 14px 24px;
   border-radius: 24px;
-  border: 1px solid ${({ theme }) => theme.color.woodsmoke};
+  border: 1px solid ${({ theme }) => theme.color.black};
   transition: all 0.3s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.color.waterloo};
+    color: ${({ theme }) => theme.color.silver};
   };
 
   &.active {

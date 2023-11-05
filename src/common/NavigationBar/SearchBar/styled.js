@@ -36,7 +36,7 @@ export const Icon = styled(SearchIcon)`
 export const Input = styled.input`
   color: ${({ theme }) => theme.color.waterloo};
   width: 100%;
-  height: 220%;
+  height: 200%;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
