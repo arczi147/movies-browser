@@ -4,6 +4,8 @@ import Movies from "./features/movieList";
 import PopularPeople from "./features/personList";
 import Person from "./features/personPage";
 import Movie from "./features/moviePage";
+import NoResult from "./features/NoResult";
+import Error from "./features/movieList/Error";
 
 function App() {
   return (
@@ -21,6 +23,12 @@ function App() {
         </Route>
         <Route path="/movie">
           <Movie />
+        </Route>
+        <Route path="/noresult">
+          <NoResult />
+        </Route>
+        <Route path="/error">
+          <Error />
         </Route>
         <Route path="/">
           <Redirect to="/movies" />

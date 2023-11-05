@@ -26,6 +26,12 @@ const Navigation = () => (
       <li>
         <PageLink to="/movie">Movie</PageLink>
       </li>
+      <li>
+        <PageLink to="/error">Error</PageLink>
+      </li>
+      <li>
+        <PageLink to="/noresult">NoResult</PageLink>
+      </li>
     </List>
   </StyledNavigation>
 );
