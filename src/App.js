@@ -7,6 +7,7 @@ import { Wrapper } from "./styled";
 import Movie from "./features/moviePage";
 import Error from "./features/Error";
 import NoResult from "./features/NoResult";
+import Loading from "./features/Loading";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/noresult">
             <NoResult />
+          </Route>
+          <Route path="/loading">
+            <Loading />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />
