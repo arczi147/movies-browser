@@ -5,6 +5,7 @@ import PopularPeople from "./features/personList";
 import Person from "./features/personPage";
 import { Wrapper } from "./styled";
 import Movie from "./features/moviePage";
+import Error from "./features/Error";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/movie">
             <Movie />
+          </Route>
+          <Route path="/error">
+            <Error />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />
