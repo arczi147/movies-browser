@@ -6,6 +6,7 @@ import Person from "./features/personPage";
 import { Wrapper } from "./styled";
 import Movie from "./features/moviePage";
 import Error from "./features/Error";
+import NoResult from "./features/NoResult";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/error">
             <Error />
+          </Route>
+          <Route path="/noresult">
+            <NoResult />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />
