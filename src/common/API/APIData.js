@@ -1,5 +1,5 @@
 const URL = "https://api.themoviedb.org/3";
-const key = "6910b3d98d8a6ec342c2ba2a935bd407"
+const key = "6910b3d98d8a6ec342c2ba2a935bd407";
 
 export const imageURL = "https://image.tmdb.org/t/p/original";
 
