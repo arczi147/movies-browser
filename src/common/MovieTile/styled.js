@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { ReactComponent as RatingStar } from "../../images/rating.svg"
 
 export const Container = styled.div`
-  max-height: auto;
-  max-width: 324px;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding: 16px;
+  border-radius: 5px;
   background: ${({ theme }) => theme.color.white};
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
   transition: transform 0.3s ease;
@@ -16,18 +17,15 @@ export const Container = styled.div`
   };
   
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    display: flex;
     flex-direction: row;
-    gap: 16px;
-    max-width: 100%;
   };
 `;
 
 export const MovieDataContainer = styled.div`
-  min-height: 176px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex-grow: 1;
+  gap: 8px;
 `;
 
 export const Poster = styled.img`
@@ -65,6 +63,7 @@ export const LogoImage = styled.img`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 8px;
 `;
 
 export const Title = styled.h2`
@@ -74,6 +73,7 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.color.woodsmoke};
   margin: 14px 0 8px;
   word-wrap: break-word;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 16px;
@@ -85,7 +85,7 @@ export const Year = styled.p`
   line-height: 150%;
   font-weight: 400;
   color: ${({ theme }) => theme.color.waterloo};
-  margin: 0 0 8px;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     font-size: 13px;
@@ -94,12 +94,12 @@ export const Year = styled.p`
 
 export const GenreTags = styled.ul`
   list-style: none;
-  margin: 0;
+  margin: 0 0 10px;
   display: flex;
   flex-direction: row;
+  gap: 8px;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 8px;
   padding: 0;
 `;
 
@@ -119,13 +119,10 @@ export const Tag = styled.li`
 `;
 
 export const Stats = styled.div`
-  max-height: 24px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
+  margin-top: auto;
   gap: 12px;
-  padding: 26px 0 0;
-  margin: auto 0 15px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: 7px
@@ -147,7 +144,8 @@ export const Rating = styled.p`
   color: ${({ theme }) => theme.color.woodsmoke};
   font-size: 16px;
   font-weight: 600;
-  line-height: 150%;
+  line-height: 100%;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 13px;
@@ -156,6 +154,8 @@ export const Rating = styled.p`
 
 export const Votes = styled.p`
   color: ${({ theme }) => theme.color.waterloo};
+  line-height: 100%;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 13px;
