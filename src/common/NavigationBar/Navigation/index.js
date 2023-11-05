@@ -32,9 +32,6 @@ const Navigation = () => (
       <li>
         <PageLink to="/noresult">NoResult</PageLink>
       </li>
-      <li>
-        <PageLink to="/loading">Loading</PageLink>
-      </li>
     </List>
   </StyledNavigation>
 );

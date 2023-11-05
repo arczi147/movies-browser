@@ -7,7 +7,7 @@ import {
 const SearchBar = () => (
   <StyledSearchBar>
     <Icon />
-    <Input placeholder="Serarch for movies..." />
+    <Input placeholder="Search for movies..." />
   </StyledSearchBar>
 );
 

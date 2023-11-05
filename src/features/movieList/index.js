@@ -5,6 +5,7 @@ import { GlobalWrapper } from "../../common/GlobalWrapper/styled";
 import { StyledHeader } from "./styled";
 import { usePopularMovies } from "./usePopularMovies";
 import { useGenres } from "../../common/useGenres";
+import Loading from "./Loading";
 
 const Movies = () => {
   const { popularMovies, loading, error } = usePopularMovies();
@@ -12,7 +13,7 @@ const Movies = () => {
   const movies = popularMovies.results;
 
   if (loading) {
-    return "Here comes the loading component";
+    return <Loading />;
   }
 
   if (error) {
