@@ -2,19 +2,19 @@ import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
 export const GlobalStyle = createGlobalStyle`
-  ${normalize}
-  
-  html {
-    box-sizing: border-box;
-  }
+	${normalize}
+	
+	html {
+		box-sizing: border-box;
+	}
 
-  *, ::after, ::before {
-    box-sizing: inherit;
-  }
+	*, ::after, ::before {
+		box-sizing: inherit;
+	}
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: ${({ theme }) => theme.color.whisper};
-    margin: 0;
-  }
+	body {
+		font-family: 'Poppins', sans-serif;
+		background: ${({ theme }) => theme.color.whisper};
+		margin: 0;
+	}
 `;
