@@ -29,6 +29,7 @@ const Movies = () => {
         {movies.map((movie) => (
           <MovieTile
             key={movie.id}
+            id={movie.id}
             poster={movie.poster_path}
             title={movie.title}
             year={movie.release_date}

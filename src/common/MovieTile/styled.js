@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { ReactComponent as RatingStar } from "../../images/rating.svg"
+import { ReactComponent as RatingStar } from "../../images/rating.svg";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -10,6 +11,7 @@ export const Container = styled.div`
   background: ${({ theme }) => theme.color.white};
   box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
   transition: transform 0.3s ease;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;

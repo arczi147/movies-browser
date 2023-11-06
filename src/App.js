@@ -12,6 +12,9 @@ function App() {
     <HashRouter>
       <NavigationBar />
       <Switch>
+        <Route path="/movies/:id">
+          <Movie />
+        </Route>
         <Route path="/movies">
           <Movies />
         </Route>
@@ -20,9 +23,6 @@ function App() {
         </Route>
         <Route path="/person">
           <Person />
-        </Route>
-        <Route path="/movie">
-          <Movie />
         </Route>
         <Route path="/noresult">
           <NoResult />

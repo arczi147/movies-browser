@@ -24,9 +24,6 @@ const Navigation = () => (
         <PageLink to="/person">Person</PageLink>
       </li>
       <li>
-        <PageLink to="/movie">Movie</PageLink>
-      </li>
-      <li>
         <PageLink to="/error">Error</PageLink>
       </li>
       <li>

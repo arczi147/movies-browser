@@ -1,4 +1,3 @@
-import poster from "../../../images/example-poster.png";
 import noPoster from "../../../images/no-poster.svg"
 import {
   Container,
@@ -19,8 +18,11 @@ import {
 } from "./styled";
 import { Title } from "../styled";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getMovieById } from "../../movieSlice";
 
-const MovieTile = ({ title, year, movieDate, movieDateText, genre, rating, ratingMax, votes, description }) => {
+const MovieTileDetails = ({ id, poster, title, year, genre, rating, votes }) => {
 
     const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 979);
 
@@ -36,6 +38,8 @@ const MovieTile = ({ title, year, movieDate, movieDateText, genre, rating, ratin
 		}
     },[]);
 
+    const params = useParams();
+    const popularMovie = useSelector(state => getMovieById(state, params.id));
 
     return (
         <>
@@ -43,8 +47,8 @@ const MovieTile = ({ title, year, movieDate, movieDateText, genre, rating, ratin
                 <Poster src={poster} alt="Poster" />
                     {/* <NoPoster src={noPoster} alt="Logo" /> */}
                 <MovieDataContainer>
-                    <Title>{/* {title} */} Mulan</Title>
-                    <Year>{/* {year} */} 2020</Year>
+                    <Title>{popularMovie.title}</Title>
+                    <Year>{year}</Year>
                     <MovieDate>
                         <MovieDateText>{/* {movieDateText} */}Production: </MovieDateText>
                         {/* {movieDate} */}China, United States of America
@@ -54,15 +58,15 @@ const MovieTile = ({ title, year, movieDate, movieDateText, genre, rating, ratin
                         {/* {movieDate} */}24.10.2020
                     </MovieDate>
                     <GenreTags>
-                        <Tag>{/* {genre} */}Action</Tag>
-                        <Tag>{/* {genre} */}Adventure</Tag>
-                        <Tag>{/* {genre} */}Drama</Tag>
+                        <Tag>{genre}</Tag>
+                        <Tag>{genre}</Tag>
+                        <Tag>{genre}</Tag>
                     </GenreTags>
                     <Stats>
                         <RatingIcon />
-                        <Rating>{/* {rating} */}7,8</Rating>
+                        <Rating>{rating}</Rating>
                         <RatingMax>{/* {ratingMax} */}/10</RatingMax>
-                        <Votes>{/* {votes} */}35 votes</Votes>
+                        <Votes>{votes}</Votes>
                     </Stats>
                     {isWideScreen && <DescriptionText>A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.</DescriptionText>}
                 </MovieDataContainer>
@@ -72,4 +76,4 @@ const MovieTile = ({ title, year, movieDate, movieDateText, genre, rating, ratin
     );
 }
 
-export default MovieTile;
+export default MovieTileDetails;
