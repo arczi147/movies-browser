@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     justify-content: center;
 `;
 
-export const Prev = styled(PaginationButton)`
+export const First = styled(PaginationButton)`
     margin-right: 12px;
     background-color: ${({ theme }) => theme.color.mystic};
 `;
