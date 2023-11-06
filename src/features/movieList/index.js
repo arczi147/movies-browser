@@ -8,42 +8,47 @@ import { useGenres } from "../../common/useGenres";
 import Loading from "./Loading";
 import Error from "./Error";
 
-const Movies = () => {
+const PopularMovies = () => {
 	const { popularMovies, loading, error } = usePopularMovies();
 	const { genres } = useGenres();
-	const movies = popularMovies.results;
-
+  
 	if (loading) {
-		return <Loading />;
+	  return <Loading />;
 	}
-
+  
 	if (error) {
-		return <Error />;
+	  return <Error />;
 	}
-
-	return (
+  
+	try {
+	  const movies = popularMovies.results;
+  
+	  return (
 		<GlobalWrapper>
-			<StyledHeader>
-				<Header text="Popular movies" />
-			</StyledHeader>
-			<MoviesGrid>
-				{movies.map((movie) => (
-					<MovieTile
-						key={movie.id}
-						poster={movie.poster_path}
-						title={movie.title}
-						year={movie.release_date}
-						genre={movie.genre_ids.map((id) =>
-							genres.genres.find((genre) =>
-								genre.id === id).name
-						)}
-						rating={movie.vote_average}
-						votes={movie.vote_count}
-					/>
-				))}
-			</MoviesGrid>
+		  <StyledHeader>
+			<Header text="Popular movies" />
+		  </StyledHeader>
+		  <MoviesGrid>
+			{movies.map((movie) => (
+			  <MovieTile
+				key={movie.id}
+				poster={movie.poster_path}
+				title={movie.title}
+				year={movie.release_date}
+				genre={movie.genre_ids.map((id) =>
+				  genres.genres.find((genre) =>
+					genre.id === id).name
+				)}
+				rating={movie.vote_average}
+				votes={movie.vote_count}
+			  />
+			))}
+		  </MoviesGrid>
 		</GlobalWrapper>
-	)
-};
+	  );
+	} catch {
+	  return <Error />;
+	}
+  };
 
-export default Movies;
+export default PopularMovies;
