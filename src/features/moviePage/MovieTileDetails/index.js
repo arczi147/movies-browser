@@ -40,7 +40,7 @@ const MovieTileDetails = () => {
 		}
     },[]);
 
-    const popularMovie = usePopularMovie(movieId);
+    const {popularMovie} = usePopularMovie(movieId);
 
     if (!popularMovie) {
 		return null

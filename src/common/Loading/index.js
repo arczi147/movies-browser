@@ -1,6 +1,6 @@
 import { StyledHeader, SpinnerSpace, StyledSpinner } from "./styled";
-import Header from "../../../common/Header";
-import { GlobalWrapper } from "../../../common/GlobalWrapper/styled";
+import Header from "../Header";
+import { GlobalWrapper } from "../GlobalWrapper/styled";
 
 const Loading = () => (
     <GlobalWrapper>

@@ -5,7 +5,7 @@ import { GlobalWrapper } from "../../common/GlobalWrapper/styled";
 import { StyledHeader } from "./styled";
 import { usePopularMovies } from "./usePopularMovies";
 import { useGenres } from "../../common/useGenres";
-import Loading from "./Loading";
+import Loading from "../../common/Loading";
 
 const Movies = () => {
   const { popularMovies, loading, error } = usePopularMovies();

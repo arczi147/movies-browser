@@ -22,7 +22,7 @@ const MovieBaner = () => {
   const { id } = useParams();
   const movieId = id;
 
-  const popularMovie = usePopularMovie(movieId);
+  const { popularMovie } = usePopularMovie(movieId);
 
     if (!popularMovie) {
 		return null
