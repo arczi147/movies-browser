@@ -24,7 +24,7 @@ const MovieCrewTile =  () => {
                         key={crewElement.id}
                         poster={crewElement.profile_path}
                         name={crewElement.name}
-                        character={crewElement.character}
+                        character={crewElement.job}
                     />
                 ) : "-"}
         </PeopleGrid>
