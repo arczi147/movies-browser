@@ -21,6 +21,7 @@ const MovieCastTile =  () => {
             {cast ?
                 cast.map(castElement => 
                     <PersonTile
+                        key={castElement.id}
                         poster={castElement.profile_path}
                         name={castElement.name}
                         character={castElement.character}
