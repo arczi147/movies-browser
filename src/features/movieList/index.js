@@ -8,14 +8,19 @@ import { useGenres } from "../../common/useGenres";
 import Loading from "./Loading";
 import Error from "./Error";
 import Pagination from "../../common/Pagination";
+import { 
+	decrementPage,
+	incrementPage,
+	goToTheLastPage,
+	goToTheFirstPage
+} from "../../common/Pagination/paginationSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementPage, decrementPage } from "./movieListSlice";
 
 const PopularMovies = () => {
 	const { popularMovies, loading, error } = usePopularMovies();
 	const { genres } = useGenres();
-	const page = useSelector(state => state.movieList.page)
 	const dispatch = useDispatch();
+	const page = useSelector(state => state.pagination.page)
 
 	if (loading) {
 		return <Loading />;
@@ -49,10 +54,12 @@ const PopularMovies = () => {
 						/>
 					))}
 				</MoviesGrid>
-				<Pagination 
+				<Pagination
+					page={page}
 					onPrev={() => dispatch(decrementPage())}
 					onNext={() => dispatch(incrementPage())}
-					page={page}
+					onFirst={() => dispatch(goToTheFirstPage())}
+					onLast={() => dispatch(goToTheLastPage())}
 				/>
 			</GlobalWrapper>
 		);
