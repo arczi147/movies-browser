@@ -1,15 +1,15 @@
 import { Container, PersonDataContainer, PersonPhoto, Name, Character } from "./styled";
-import personPhoto from "../../images/example-person.png";
+import { imageURL } from "../API/APIData";
 
-const PersonTile = () => (
+const PersonTile = ({ name, character, poster }) => (
     <Container>
         <PersonDataContainer>
-            <PersonPhoto src={personPhoto} alt="Famous person" />
+            <PersonPhoto src={imageURL + poster} alt="Famous person" />
             <Name>
-                {/* {name} */} Liu Yifei
+                {name}
             </Name>
             <Character>
-                {/* {character */} Mulan
+                {character}
             </Character>
         </PersonDataContainer>
     </Container>
