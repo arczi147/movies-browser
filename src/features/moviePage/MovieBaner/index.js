@@ -13,26 +13,42 @@ import {
   Votes
 } from "./styled";
 import baner from "./baner.png";
-import shadow from "../../../images/shadow.png"
+import shadow from "../../../images/shadow.png";
+import { usePopularMovie } from "../usePopularMovie";
+import { useParams } from "react-router-dom";
 
-const MovieBaner = () => (
-  <Background>
-    <GlobalWrapper>
-      <BanerContainer>
-        <Shadow src={shadow} alt="Shadow Frame" />
-        <Baner src={baner} alt="Baner" />
-        <MovieInfo>
-          <Title>Mulan long title</Title>
-          <Stats>
-            <RatingIcon />
-            <Rating>7,8</Rating>
-            <RatingScale>/ 10</RatingScale>
-            <Votes>335 votes</Votes>
-          </Stats>
-        </MovieInfo>
-      </BanerContainer>
-    </GlobalWrapper>
-  </Background>
-);
+const MovieBaner = () => {
+   
+  const { id } = useParams();
+  const movieId = id;
+
+  const popularMovie = usePopularMovie(movieId);
+
+    if (!popularMovie) {
+		return null
+	}
+
+  const {title, vote_average, vote_count} = popularMovie;
+
+  return (
+    <Background>
+      <GlobalWrapper>
+        <BanerContainer>
+          <Shadow src={shadow} alt="Shadow Frame" />
+          <Baner src={baner} alt="Baner" />
+          <MovieInfo>
+            <Title>{title}</Title>
+            <Stats>
+              <RatingIcon />
+              <Rating>{vote_average ? vote_average : "-"}</Rating>
+              <RatingScale>/ 10</RatingScale>
+              <Votes>{vote_count ? vote_count : "0"} votes</Votes>
+            </Stats>
+          </MovieInfo>
+        </BanerContainer>
+      </GlobalWrapper>
+    </Background>
+  );
+}
 
 export default MovieBaner;

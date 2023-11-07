@@ -18,13 +18,15 @@ import {
 } from "./styled";
 import { Title } from "../styled";
 import { useState, useEffect } from "react";
+import { usePopularMovie } from "../usePopularMovie";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { getMovieById } from "../../movieSlice";
+import { imageURL } from "../../../common/API/APIData";
 
-const MovieTileDetails = ({ title, year, poster, movieDate, movieDateText, genre, rating, ratingMax, votes, description }) => {
+const MovieTileDetails = () => {
 
     const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 979);
+    const { id } = useParams();
+    const movieId = id;
 
     useEffect(() => {
         const handleResize = () => {
@@ -38,39 +40,54 @@ const MovieTileDetails = ({ title, year, poster, movieDate, movieDateText, genre
 		}
     },[]);
 
-    const params = useParams();
-    const popularMovie = useSelector(state => getMovieById(state, params.id));
+    const popularMovie = usePopularMovie(movieId);
+
+    if (!popularMovie) {
+		return null
+	}
+
+    const {poster_path, title, release_date, production_countries, genres, vote_average, vote_count, overview} = popularMovie;
 
     return (
         <>
             <Container>
-                <Poster src={poster} alt="Poster" />
-                    {/* <NoPoster src={noPoster} alt="Logo" /> */}
+                {poster_path ? (
+                    <Poster src={poster_path} alt="Poster" />
+                ) : (
+                    <NoPoster src={noPoster} alt="Logo" />
+                )}
                 <MovieDataContainer>
-                    <Title>{/* {title} */} Mulan</Title>
-                    <Year>{/* {year} */} 2020</Year>
+                    <Title>{title}</Title>
+                    <Year>
+                        {release_date ? new Date(release_date).toLocaleDateString(
+                            undefined,
+                            { year: "numeric" },
+                        ) : "-"}
+                    </Year>
                     <MovieDate>
-                        <MovieDateText>{/* {movieDateText} */}Production: </MovieDateText>
-                        {/* {movieDate} */}China, United States of America
+                        <MovieDateText>Production: </MovieDateText>
+                        {production_countries ? production_countries.map(country => country.name) : "-"}
                     </MovieDate>
                     <MovieDate>
-                        <MovieDateText>{/* {movieDateText} */}Release date: </MovieDateText>
-                        {/* {movieDate} */}24.10.2020
+                        <MovieDateText>Release date: </MovieDateText>
+                            {release_date ? new Date(release_date).toLocaleDateString( undefined, {
+						        day: '2-digit',
+						        month: '2-digit',
+						        year: 'numeric',
+					        }) : "-"}
                     </MovieDate>
                     <GenreTags>
-                        <Tag>{/* {genre} */}Action</Tag>
-                        <Tag>{/* {genre} */}Adventure</Tag>
-                        <Tag>{/* {genre} */}Drama</Tag>
+                        {genres ? genres.map(({ id, name }) => <Tag key={id}>{name}</Tag>) : ""}
                     </GenreTags>
                     <Stats>
                         <RatingIcon />
-                        <Rating>{/* {rating} */}7,8</Rating>
-                        <RatingMax>{/* {ratingMax} */}/10</RatingMax>
-                        <Votes>{/* {votes} */}35 votes</Votes>
+                        <Rating>{vote_average ? vote_average : "-"}</Rating>
+                        <RatingMax>/10</RatingMax>
+                        <Votes>{vote_count ? vote_count : "0"} votes</Votes>
                     </Stats>
-                    {isWideScreen && <DescriptionText>A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.</DescriptionText>}
+                    {isWideScreen && <DescriptionText>{overview ? overview : ""}</DescriptionText>}
                 </MovieDataContainer>
-                {!isWideScreen && <DescriptionText>A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.</DescriptionText>}
+                {!isWideScreen && <DescriptionText>{overview ? overview : ""}</DescriptionText>}
             </Container>
         </>
     );
