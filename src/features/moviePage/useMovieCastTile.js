@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchAPI } from "../../../common/API/fetchAPI";
+import { fetchAPI } from "../../common/API/fetchAPI";
 
 export const useMovieCastTile = (movieId) => {
     const [movieCastTile, setMovieCastTile] = useState(null);

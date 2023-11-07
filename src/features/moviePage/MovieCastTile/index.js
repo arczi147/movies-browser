@@ -1,6 +1,6 @@
 import PersonTile from "../../../common/PersonTile";
 import { PeopleGrid } from "../../../common/PersonTile/styled";
-import { useMovieCastTile } from "./useMovieCastTile";
+import { useMovieCastTile } from "../useMovieCastTile";
 import { useParams } from "react-router-dom";
 
 const MovieCastTile =  () => {

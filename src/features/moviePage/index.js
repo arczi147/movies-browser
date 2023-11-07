@@ -5,6 +5,7 @@ import { Title } from "./styled";
 import { usePopularMovie } from "./usePopularMovie";
 import Loading from "../../common/Loading";
 import MovieCastTile from "./MovieCastTile";
+import MovieCrewTile from "./MovieCrewTile";
 
 const Movie = () => {
 
@@ -23,6 +24,7 @@ const Movie = () => {
                     <Title>Cast</Title>
                     <MovieCastTile />
                     <Title>Crew</Title>
+                    <MovieCrewTile/>
                 </GlobalWrapper>
             </>
         )
