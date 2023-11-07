@@ -12,10 +12,10 @@ import {
   RatingScale,
   Votes
 } from "./styled";
-import baner from "./baner.png";
 import shadow from "../../../images/shadow.png";
 import { usePopularMovie } from "../usePopularMovie";
 import { useParams } from "react-router-dom";
+import { imageURL } from "../../../common/API/APIData";
 
 const MovieBaner = () => {
    
@@ -28,14 +28,18 @@ const MovieBaner = () => {
 		return null
 	}
 
-  const {title, vote_average, vote_count} = popularMovie;
+  const {title, vote_average, vote_count, backdrop_path} = popularMovie;
+
+  if(!backdrop_path) {
+    return null;
+  }
 
   return (
     <Background>
       <GlobalWrapper>
         <BanerContainer>
           <Shadow src={shadow} alt="Shadow Frame" />
-          <Baner src={baner} alt="Baner" />
+          <Baner src={imageURL + backdrop_path} alt="Baner" />
           <MovieInfo>
             <Title>{title}</Title>
             <Stats>

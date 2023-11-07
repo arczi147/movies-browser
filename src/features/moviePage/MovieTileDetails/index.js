@@ -52,7 +52,7 @@ const MovieTileDetails = () => {
         <>
             <Container>
                 {poster_path ? (
-                    <Poster src={poster_path} alt="Poster" />
+                    <Poster src={imageURL + poster_path} alt="Poster" />
                 ) : (
                     <NoPoster src={noPoster} alt="Logo" />
                 )}
