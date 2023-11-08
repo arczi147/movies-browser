@@ -12,4 +12,8 @@ export const PaginationButton = styled.button`
     &:hover {
         cursor: pointer;
     }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        gap: 4px;
+    };
 `;
