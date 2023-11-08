@@ -1,21 +1,21 @@
 import poster from "../../../images/example-poster.png";
 import noPoster from "../../../images/no-poster.svg"
 import {
-  Container,
-  MovieDataContainer,
-  Poster,
-  NoPoster,
-  Year,
-  MovieDate,
-  MovieDateText,
-  GenreTags,
-  Tag,
-  Stats,
-  RatingIcon,
-  Rating,
-  RatingMax,
-  Votes,
-  DescriptionText,
+    Container,
+    MovieDataContainer,
+    Poster,
+    NoPoster,
+    Year,
+    MovieDate,
+    MovieDateText,
+    GenreTags,
+    Tag,
+    Stats,
+    RatingIcon,
+    Rating,
+    RatingMax,
+    Votes,
+    DescriptionText,
 } from "./styled";
 import { Title } from "../styled";
 import { useState, useEffect } from "react";
@@ -32,16 +32,16 @@ const MovieTile = ({ title, year, movieDate, movieDateText, genre, rating, ratin
         window.addEventListener('resize', handleResize);
 
         return () => {
-			window.removeEventListener('resize', handleResize)
-		}
-    },[]);
+            window.removeEventListener('resize', handleResize)
+        }
+    }, []);
 
 
     return (
         <>
             <Container>
                 <Poster src={poster} alt="Poster" />
-                    {/* <NoPoster src={noPoster} alt="Logo" /> */}
+                {/* <NoPoster src={noPoster} alt="Logo" /> */}
                 <MovieDataContainer>
                     <Title>{/* {title} */} Mulan</Title>
                     <Year>{/* {year} */} 2020</Year>

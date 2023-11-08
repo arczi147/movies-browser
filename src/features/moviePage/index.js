@@ -3,7 +3,7 @@ import MovieTileDetails from "./MovieTileDetails";
 import { GlobalWrapper } from "../../common/GlobalWrapper/styled";
 import { Title } from "./styled";
 
-const Movie = () => (
+const PopularMovies = () => (
     <>
         <MovieBaner />
         <GlobalWrapper>
@@ -14,4 +14,4 @@ const Movie = () => (
     </>
 )
 
-export default Movie;
+export default PopularMovies;
