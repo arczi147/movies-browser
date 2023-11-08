@@ -13,7 +13,7 @@ export const usePopularMovie = (movieId) => {
           setPopularMovie(response);
           setLoading(false);
         } catch {
-          console.log("Błąd");
+          console.error("Error");
           setLoading(false);
         }
       };

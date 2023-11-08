@@ -4,6 +4,7 @@ import {
   MovieDataContainer,
   Poster,
   NoPoster,
+  Title,
   Year,
   MovieDate,
   MovieDateText,
@@ -16,11 +17,14 @@ import {
   Votes,
   DescriptionText,
 } from "./styled";
-import { Title } from "../styled";
 import { useState, useEffect } from "react";
 import { usePopularMovie } from "../usePopularMovie";
 import { useParams } from "react-router-dom";
 import { imageURL } from "../../../common/API/APIData";
+
+function formatNumber(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
+  };
 
 const MovieTileDetails = () => {
 
@@ -40,7 +44,7 @@ const MovieTileDetails = () => {
 		}
     },[]);
 
-    const {popularMovie} = usePopularMovie(movieId);
+    const { popularMovie } = usePopularMovie(movieId);
 
     if (!popularMovie) {
 		return null
@@ -81,9 +85,9 @@ const MovieTileDetails = () => {
                     </GenreTags>
                     <Stats>
                         <RatingIcon />
-                        <Rating>{vote_average ? vote_average : "-"}</Rating>
+                        <Rating>{vote_average ? vote_average.toFixed(1) : "-"}</Rating>
                         <RatingMax>/10</RatingMax>
-                        <Votes>{vote_count ? vote_count : "0"} votes</Votes>
+                        <Votes>{vote_count ? formatNumber(vote_count) : "0"} votes</Votes>
                     </Stats>
                     {isWideScreen && <DescriptionText>{overview ? overview : ""}</DescriptionText>}
                 </MovieDataContainer>

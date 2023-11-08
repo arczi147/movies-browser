@@ -26,7 +26,7 @@ const MovieCastTile =  () => {
                         name={castElement.name}
                         character={castElement.character}
                     />
-                ) : "-"}
+                ) : "No cast information available"}
         </PeopleGrid>
     )
 }

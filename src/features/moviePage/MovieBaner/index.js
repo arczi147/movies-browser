@@ -17,6 +17,10 @@ import { usePopularMovie } from "../usePopularMovie";
 import { useParams } from "react-router-dom";
 import { imageURL } from "../../../common/API/APIData";
 
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
+};
+
 const MovieBaner = () => {
    
   const { id } = useParams();
@@ -44,9 +48,9 @@ const MovieBaner = () => {
             <Title>{title}</Title>
             <Stats>
               <RatingIcon />
-              <Rating>{vote_average ? vote_average : "-"}</Rating>
+              <Rating>{vote_average ? vote_average.toFixed(1) : "-"}</Rating>
               <RatingScale>/ 10</RatingScale>
-              <Votes>{vote_count ? vote_count : "0"} votes</Votes>
+              <Votes>{vote_count ? formatNumber(vote_count) : "0"} votes</Votes>
             </Stats>
           </MovieInfo>
         </BanerContainer>

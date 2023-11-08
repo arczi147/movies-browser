@@ -26,7 +26,7 @@ const MovieCrewTile =  () => {
                         name={crewElement.name}
                         character={crewElement.job}
                     />
-                ) : "-"}
+                ) : "No crew information available"}
         </PeopleGrid>
     )
 }
