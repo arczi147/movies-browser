@@ -5,7 +5,7 @@ import PopularPeople from "./features/personList";
 import Person from "./features/personPage";
 import Movie from "./features/moviePage";
 import NoResult from "./features/NoResult";
-import Error from "./features/movieList/Error";
+import Error from "./common/Error";
 
 function App() {
 	return (
