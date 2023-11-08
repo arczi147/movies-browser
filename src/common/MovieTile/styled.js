@@ -3,22 +3,23 @@ import { ReactComponent as RatingStar } from "../../images/rating.svg";
 import { Link } from "react-router-dom";
 
 export const Container = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 16px;
-  border-radius: 5px;
-  background: ${({ theme }) => theme.color.white};
-  box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
-  transition: transform 0.3s ease;
-  text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	height: 100%;
+	padding: 16px;
+	border-radius: 5px;
+	background: ${({ theme }) => theme.color.white};
+	box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
+	transition: transform 0.3s ease;
+   	text-decoration: none;
 
     &:hover {
         cursor: pointer;
         transform: translateY(-8px);
     };
   
-    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         flex-direction: row;
     };
 `;
@@ -32,14 +33,14 @@ export const MovieDataContainer = styled.div`
 
 export const Poster = styled.img`
     border-radius: 5px;
-    max-width: 292px;
-  	max-height: 434px;
+    width: 292px;
+  	height: 434px;
   	width: 100%;
   	margin: 0;
 
-  	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    	font-size: 13px;
-    	width: 45%;
+  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    	width: 114px;
+		height: 169px
   	};
 `;
 
@@ -50,7 +51,7 @@ export const NoPoster = styled.img`
   	width: 100%;
   	margin: 0;
 
-  	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     	font-size: 13px;
     	width: 45%;
   	};
@@ -89,7 +90,7 @@ export const Year = styled.p`
   	color: ${({ theme }) => theme.color.waterloo};
   	margin: 0;
 
-  	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     	font-size: 13px;
   	};
 `;
@@ -169,15 +170,15 @@ export const MoviesGrid = styled.div`
   	grid-gap: 24px;
   	grid-template-columns: repeat(4, 1fr);
 
-  	@media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
+  	@media (max-width: 1520px) {
     	grid-template-columns: repeat(3, 1fr);
   	};
 
-  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  	@media (max-width: 1140px) {
     	grid-template-columns: repeat(2, 1fr);
   	};
 
-  	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     	display: flex;
     	flex-direction: column;
     	gap: 16px;

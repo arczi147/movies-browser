@@ -36,7 +36,6 @@ const MovieTileDetails = () => {
         const handleResize = () => {
             setIsWideScreen(window.innerWidth > 979);
         }
-
         window.addEventListener('resize', handleResize);
 
         return () => {

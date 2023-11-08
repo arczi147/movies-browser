@@ -31,15 +31,12 @@ const Navigation = () => {
 				<li>
 					<PageLink to="/people">People</PageLink>
 				</li>
-				<li>
+				{/* <li>
 					<PageLink to="/person">Person</PageLink>
 				</li>
 				<li>
-					<PageLink to="/error">Error</PageLink>
-				</li>
-				<li>
 					<PageLink to="/noresult">NoResult</PageLink>
-				</li>
+				</li> */}
 			</List>
 		</StyledNavigation>
 	);
