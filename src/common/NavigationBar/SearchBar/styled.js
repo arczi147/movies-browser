@@ -16,6 +16,7 @@ export const StyledSearchBar = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
       	margin: 0 0 16px;
+        max-width: 1140px;
     };
 
     @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {

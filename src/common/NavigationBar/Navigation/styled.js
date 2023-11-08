@@ -4,11 +4,13 @@ import { ReactComponent as LogoIcon } from "../../../images/logo.svg";
 
 export const StyledNavigation = styled.nav`
     display: flex;
+	justify-content: space-between;
     gap: 80px;
+	width: 100%;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 19px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     };
 `;
 
