@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchAPI } from "../../common/API/fetchAPI";
+import { URL, key } from "../../common/API/APIData";
 
 export const usePopularMovie = (movieId) => {
     const [popularMovie, setPopularMovie] = useState(null);
@@ -8,7 +9,7 @@ export const usePopularMovie = (movieId) => {
     useEffect(() => {
       const getPopularMovie = async () => {
         try {
-          const response = await fetchAPI(`https://api.themoviedb.org/3/movie/${movieId}?api_key=6910b3d98d8a6ec342c2ba2a935bd407&language=en-US&`);
+          const response = await fetchAPI(`${URL}/movie/${movieId}?api_key=${key}&language=en-US&`);
           setPopularMovie(response);
           setLoading(false);
         } catch {
