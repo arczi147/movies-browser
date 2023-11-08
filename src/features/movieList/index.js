@@ -6,19 +6,33 @@ import { StyledHeader } from "./styled";
 import { usePopularMovies } from "./usePopularMovies";
 import { useGenres } from "../../common/useGenres";
 import Loading from "../../common/Loading";
+import Error from "./Error";
+import Pagination from "../../common/Pagination";
+import { 
+	decrementPage,
+	incrementPage,
+	goToTheLastPage,
+	goToTheFirstPage
+} from "../../common/Pagination/paginationSlice";
+import { useSelector, useDispatch } from "react-redux";
 
-const Movies = () => {
-  const { popularMovies, loading, error } = usePopularMovies();
-  const { genres } = useGenres();
-  const movies = popularMovies.results;
 
-  if (loading) {
-    return <Loading />;
-  }
+const PopularMovies = () => {
+	const { popularMovies, loading, error } = usePopularMovies();
+	const { genres } = useGenres();
+	const dispatch = useDispatch();
+	const page = useSelector(state => state.pagination.page)
 
-  if (error) {
-    return "Here comes the error component";
-  }
+	if (loading) {
+		return <Loading />;
+	}
+
+	if (error) {
+		return <Error />;
+	}
+
+	try {
+		const movies = popularMovies.results;
 
   return (
     <GlobalWrapper>
@@ -29,7 +43,7 @@ const Movies = () => {
         {movies.map((movie) => (
           <MovieTile
             key={movie.id}
-            id={movie.id}
+			id={movie.id}
             poster={movie.poster_path}
             title={movie.title}
             year={movie.release_date}
@@ -42,8 +56,18 @@ const Movies = () => {
           />
         ))}
       </MoviesGrid>
+	  <Pagination
+					page={page}
+					onPrev={() => dispatch(decrementPage())}
+					onNext={() => dispatch(incrementPage())}
+					onFirst={() => dispatch(goToTheFirstPage())}
+					onLast={() => dispatch(goToTheLastPage())}
+				/>
     </GlobalWrapper>
-  )
+  );
+}catch {
+	return <Error />;
+}
 };
 
-export default Movies;
+export default PopularMovies;

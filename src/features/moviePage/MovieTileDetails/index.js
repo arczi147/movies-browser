@@ -40,9 +40,9 @@ const MovieTileDetails = () => {
         window.addEventListener('resize', handleResize);
 
         return () => {
-			window.removeEventListener('resize', handleResize)
-		}
-    },[]);
+            window.removeEventListener('resize', handleResize)
+        }
+    }, []);
 
     const { popularMovie } = usePopularMovie(movieId);
 
@@ -86,7 +86,7 @@ const MovieTileDetails = () => {
                     <Stats>
                         <RatingIcon />
                         <Rating>{vote_average ? vote_average.toFixed(1) : "-"}</Rating>
-                        <RatingMax>/10</RatingMax>
+                        <RatingMax>/ 10</RatingMax>
                         <Votes>{vote_count ? formatNumber(vote_count) : "0"} votes</Votes>
                     </Stats>
                     {isWideScreen && <DescriptionText>{overview ? overview : ""}</DescriptionText>}

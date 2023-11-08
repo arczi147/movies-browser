@@ -13,173 +13,173 @@ export const Container = styled(Link)`
   transition: transform 0.3s ease;
   text-decoration: none;
 
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-8px);
-  };
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-8px);
+    };
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    flex-direction: row;
-  };
+    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        flex-direction: row;
+    };
 `;
 
 export const MovieDataContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
 `;
 
 export const Poster = styled.img`
-  border-radius: 5px;
-  max-width: 292px;
-  max-height: 434px;
-  width: 100%;
-  margin: 0;
+    border-radius: 5px;
+    max-width: 292px;
+  	max-height: 434px;
+  	width: 100%;
+  	margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    font-size: 13px;
-    width: 45%;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    	font-size: 13px;
+    	width: 45%;
+  	};
 `;
 
 export const NoPoster = styled.img`
-  border-radius: 5px;
-  max-width: 292px;
-  max-height: 434px;
-  width: 100%;
-  margin: 0;
+  	border-radius: 5px;
+  	max-width: 292px;
+  	max-height: 434px;
+  	width: 100%;
+  	margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    font-size: 13px;
-    width: 45%;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    	font-size: 13px;
+    	width: 45%;
+  	};
 `;
 
 export const LogoImage = styled.img`
-  width: 120px;
-  height: 120px;
-  margin: auto;
+  	width: 120px;
+  	height: 120px;
+  	margin: auto;
 `;
 
 export const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  	display: flex;
+  	flex-direction: column;
+  	gap: 8px;
 `;
 
 export const Title = styled.h2`
-  font-size: 22px;
-  line-height: 130%;
-  font-weight: 500;
-  color: ${({ theme }) => theme.color.woodsmoke};
-  margin: 14px 0 8px;
-  word-wrap: break-word;
-  margin: 0;
+  	font-size: 22px;
+  	line-height: 130%;
+  	font-weight: 500;
+  	color: ${({ theme }) => theme.color.woodsmoke};
+  	margin: 14px 0 8px;
+  	word-wrap: break-word;
+  	margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: 16px;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    	font-size: 16px;
+  	};
 `;
 
 export const Year = styled.p`
-  font-size: 16px;
-  line-height: 150%;
-  font-weight: 400;
-  color: ${({ theme }) => theme.color.waterloo};
-  margin: 0;
+  	font-size: 16px;
+  	line-height: 150%;
+  	font-weight: 400;
+  	color: ${({ theme }) => theme.color.waterloo};
+  	margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    font-size: 13px;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    	font-size: 13px;
+  	};
 `;
 
 export const GenreTags = styled.ul`
-  list-style: none;
-  margin: 0 0 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding: 0;
+  	list-style: none;
+  	margin: 0 0 10px;
+  	display: flex;
+  	flex-direction: row;
+  	gap: 8px;
+  	justify-content: flex-start;
+  	flex-wrap: wrap;
+  	padding: 0;
 `;
 
 export const Tag = styled.li`
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 140%;
-  background: ${({ theme }) => theme.color.mystic};
-  color: ${({ theme }) => theme.color.woodsmoke};
-  border-radius: 5px;
-  padding: 8px 16px;
+  	font-size: 14px;
+  	font-weight: 400;
+  	line-height: 140%;
+  	background: ${({ theme }) => theme.color.mystic};
+  	color: ${({ theme }) => theme.color.woodsmoke};
+  	border-radius: 5px;
+  	padding: 8px 16px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: 10px;
-    padding: 4px 8px;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    	font-size: 10px;
+    	padding: 4px 8px;
+  	};
 `;
 
 export const Stats = styled.div`
-  display: flex;
-  align-items: flex-end;
-  margin-top: auto;
-  gap: 12px;
+  	display: flex;
+  	align-items: flex-end;
+  	margin-top: auto;
+  	gap: 12px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    gap: 7px
-  }
+  	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    	gap: 7px
+  	};
 `;
 
 export const RatingIcon = styled(RatingStar)`
-  height: 24px;
-  width: 24px;
+  	height: 24px;
+  	width: 24px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    height: 16px;
-    width: 16px;
-    margin-right: 1px;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    	height: 16px;
+    	width: 16px;
+    	margin-right: 1px;
+  	};
 `;
 
 export const Rating = styled.p`
-  color: ${({ theme }) => theme.color.woodsmoke};
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 100%;
-  margin: 0;
+  	color: ${({ theme }) => theme.color.woodsmoke};
+  	font-size: 16px;
+  	font-weight: 600;
+  	line-height: 100%;
+  	margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: 13px;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    	font-size: 13px;
+  	};
 `;
 
 export const Votes = styled.p`
-  color: ${({ theme }) => theme.color.waterloo};
-  line-height: 100%;
-  margin: 0;
+  	color: ${({ theme }) => theme.color.waterloo};
+  	line-height: 100%;
+  	margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: 13px;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    	font-size: 13px;
+  	};
 `; 
 
 export const MoviesGrid = styled.div`
-  display: grid;
-  grid-gap: 24px;
-  grid-template-columns: repeat(4, 1fr);
+  	display: grid;
+  	grid-gap: 24px;
+  	grid-template-columns: repeat(4, 1fr);
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
-    grid-template-columns: repeat(3, 1fr);
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
+    	grid-template-columns: repeat(3, 1fr);
+  	};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    grid-template-columns: repeat(2, 1fr);
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    	grid-template-columns: repeat(2, 1fr);
+  	};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  };
+  	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    	display: flex;
+    	flex-direction: column;
+    	gap: 16px;
+  	};
 `;

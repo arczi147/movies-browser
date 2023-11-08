@@ -1,32 +1,75 @@
-import { Wrapper, Prev, Previous, PageNumberContainer, Page, PageNumber, Of, PagesAmount, Next, Last } from "./styled";
-import { ReactComponent as PrevVector } from "../../images/prev.svg";
-import { ReactComponent as NextVector } from "../../images/next.svg";
+import {
+    Wrapper,
+    PrevVector,
+    NextVector,
+    First,
+    Previous,
+    Next,
+    Last,
+    PageNumberContainer,
+    Page,
+    PageNumber,
+    Of,
+    PagesAmount,
+} from "./styled";
 
-const Pagination = () => (
+const Pagination = ({ onFirst, onPrev, page, onNext, onLast }) => (
     <Wrapper>
-        <Prev>
-            <PrevVector />
-            Prev
-        </Prev>
-        <Previous>
-            <PrevVector />
-            Previous
-        </Previous>
+        {page === 1 ? (
+            <>
+                <First disabled={true}>
+                    <PrevVector disabled={true} />
+                    First
+                </First>
+                <Previous disabled={true}>
+                    <PrevVector disabled={true} />
+                    Previous
+                </Previous>
+            </>
+        ) : (
+            <>
+                <First onClick={onFirst}>
+                    <PrevVector />
+                    First
+                </First>
+                <Previous onClick={onPrev}>
+                    <PrevVector />
+                    Previous
+                </Previous>
+            </>
+        )}
+
         <PageNumberContainer>
             <Page>Page</Page>
-            <PageNumber>1</PageNumber>
+            <PageNumber>{page}</PageNumber>
             <Of>of</Of>
             <PagesAmount>500</PagesAmount>
         </PageNumberContainer>
-        <Next>
-            Next
-            <NextVector />
-        </Next>
-        <Last>
-            Last
-            <NextVector />
-        </Last>
-    </Wrapper>
+
+        {page === 500 ? (
+            <>
+                <Next disabled={true}>
+                    Next
+                    <NextVector disabled={true} />
+                </Next>
+                <Last disabled={true}>
+                    Last
+                    <NextVector disabled={true} />
+                </Last>
+            </>
+        ) : (
+            <>
+                <Next onClick={onNext}>
+                    Next
+                    <NextVector />
+                </Next>
+                <Last onClick={onLast}>
+                    Last
+                    <NextVector />
+                </Last>
+            </>
+        )}
+    </Wrapper >
 );
 
 export default Pagination;
