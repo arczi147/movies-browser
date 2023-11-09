@@ -5,11 +5,11 @@ export const GlobalWrapper = styled.div`
     max-width: 90%;
     margin: 0 auto;
     
-    @media (max-width: 1520px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
     	width: 1020px;
   	};
     
-    @media (max-width: 1140px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     	width: 672px;
   	};
     

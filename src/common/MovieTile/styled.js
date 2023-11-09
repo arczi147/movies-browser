@@ -25,7 +25,7 @@ export const Container = styled(Link)`
 `;
 
 export const MovieDataContainer = styled.div`
-    display: flex;
+	display: flex;
     flex-direction: column;
     flex-grow: 1;
     gap: 8px;
@@ -35,8 +35,6 @@ export const Poster = styled.img`
     border-radius: 5px;
     width: 292px;
   	height: 434px;
-  	width: 100%;
-  	margin: 0;
 
   	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     	width: 114px;
@@ -48,8 +46,6 @@ export const NoPoster = styled.img`
   	border-radius: 5px;
   	max-width: 292px;
   	max-height: 434px;
-  	width: 100%;
-  	margin: 0;
 
   	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     	font-size: 13px;
@@ -170,11 +166,11 @@ export const MoviesGrid = styled.div`
   	grid-gap: 24px;
   	grid-template-columns: repeat(4, 1fr);
 
-  	@media (max-width: 1520px) {
+  	@media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
     	grid-template-columns: repeat(3, 1fr);
   	};
 
-  	@media (max-width: 1140px) {
+  	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     	grid-template-columns: repeat(2, 1fr);
   	};
 

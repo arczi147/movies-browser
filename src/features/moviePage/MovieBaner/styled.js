@@ -56,7 +56,7 @@ export const Title = styled.h1`
 		margin-bottom: 12px;
 	}
 
-	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
 		font-size: 24px;
 		margin-bottom: 5.5px;
 	}

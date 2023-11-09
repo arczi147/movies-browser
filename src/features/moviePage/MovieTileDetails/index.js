@@ -28,13 +28,13 @@ function formatNumber(number) {
 
 const MovieTileDetails = () => {
 
-    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 979);
+    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 1140);
     const { id } = useParams();
     const movieId = id;
 
     useEffect(() => {
         const handleResize = () => {
-            setIsWideScreen(window.innerWidth > 979);
+            setIsWideScreen(window.innerWidth > 1140);
         }
         window.addEventListener('resize', handleResize);
 
@@ -69,7 +69,7 @@ const MovieTileDetails = () => {
                     </Year>
                     <MovieDate>
                         <MovieDateText>Production: </MovieDateText>
-                        {production_countries ? production_countries.map(country => country.name) : "-"}
+                        {production_countries ? production_countries.map(country => country.name).join(", ") : "-"}
                     </MovieDate>
                     <MovieDate>
                         <MovieDateText>Release date: </MovieDateText>
