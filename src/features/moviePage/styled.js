@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const MovieWrapper = styled.div`
+    margin-bottom: 13%;
+`;
+
+export const GridWrapper = styled.div`
     width: 1368px;
     max-width: 90%;
     margin: 0 auto;
