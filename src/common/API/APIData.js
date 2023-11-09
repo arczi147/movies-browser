@@ -7,4 +7,4 @@ export const popularMoviesURL = `${URL}/movie/popular?api_key=${key}&language=en
 
 export const genresURL = `${URL}/genre/movie/list?api_key=${key}&language=en`;
 
-export const popularPeopleURL = `${URL}/person/popular?api_key=${key}&language=en-US&page=1`;
+export const popularPeopleURL = `${URL}/person/popular?api_key=${key}&language=en-US`;
