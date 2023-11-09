@@ -109,7 +109,7 @@ export const Rating = styled.p`
 	}
 `;
 
-export const RatingScale = styled.p`
+export const RatingMax = styled.p`
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 120%;

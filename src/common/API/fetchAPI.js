@@ -7,5 +7,6 @@ export const fetchAPI = async (URL) => {
 	}
 	catch (error) {
 		console.error("Error while fetching data from external API source", error);
+		throw Error
 	}
 };

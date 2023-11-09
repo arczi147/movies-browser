@@ -29,18 +29,28 @@ const MovieTile = ({ id, poster, title, year, genre, rating, votes }) => (
 		)}
 		<MovieDataContainer>
 			<Info>
-				<Title>{title}</Title>
-				<Year>{new Date(year).getFullYear()}</Year>
+				<Title>{title ? title : "Unknown title"}</Title>
+				<Year>{year ? (new Date(year).getFullYear()) : ""}</Year>
 				<GenreTags>
-					{genre.map((genreName, index) => (
-						<Tag key={index}>{genreName}</Tag>
-					))}
+					{genre ? (
+						genre.map((genreName, index) => (
+							<Tag key={index}>{genreName}</Tag>
+						))
+					) : ""}
 				</GenreTags>
 			</Info>
 			<Stats>
-				<RatingIcon />
-				<Rating>{rating.toFixed(1)}</Rating>
-				<Votes>{formatNumber(votes)} votes</Votes>
+				{votes ? (
+					<>
+						<RatingIcon />
+						<Rating>{rating ? rating.toFixed(1) : "0"}</Rating>
+					</>
+				) : (
+					""
+				)}
+				<Votes>
+					{votes ? formatNumber(votes) + " votes" : "No votes yet"}
+				</Votes>
 			</Stats>
 		</MovieDataContainer>
 	</Container>
