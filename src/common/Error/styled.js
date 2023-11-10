@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as DangerIcon } from "../..//images/danger.svg";
+import { NavLink } from "react-router-dom"
+import { ReactComponent as DangerIcon } from "../../images/danger.svg";
 
 export const Wrapper = styled.div`
     margin-top: 180px;
@@ -31,13 +32,23 @@ export const Info = styled.span`
     margin: 0;
 `;
 
-export const Button = styled.button`
+export const Button = styled(NavLink)`
     padding: 16px 14px;
     border-radius: 5px;
     background-color: ${({ theme }) => theme.color.scienceBlue};
     color: ${({ theme }) => theme.color.white};
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     font-weight: 700;
     border: none;
     text-decoration: none;
+    cursor: pointer;
+    
+    &:hover {
+        opacity: 95%;
+    }
+    
+    &:active {
+        border: 1px solid ${({ theme }) => theme.color.waterloo};
+    }
 `;
