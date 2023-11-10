@@ -61,7 +61,7 @@ const PopularPeople = () => {
         )
 
     } catch {
-        <Error />;
+        return "";
     }
 };
 

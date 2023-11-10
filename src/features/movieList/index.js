@@ -66,7 +66,7 @@ const PopularMovies = () => {
 			</GlobalWrapper>
 		);
 	} catch {
-		return <Error />;
+		return ""
 	}
 };
 
