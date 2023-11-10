@@ -1,7 +1,8 @@
 import MovieBaner from "./MovieBaner";
 import MovieTileDetails from "./MovieTileDetails";
 import { GlobalWrapper } from "../../common/GlobalWrapper/styled";
-import { MovieWrapper, GridWrapper, Title } from "./styled";
+import { MovieWrapper, Title } from "./styled";
+import { GridWrapper } from "../../common/GridWrapper/styled";
 import { usePopularMovie } from "./usePopularMovie";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
