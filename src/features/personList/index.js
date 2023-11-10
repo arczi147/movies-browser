@@ -43,6 +43,7 @@ const PopularPeople = () => {
                     <PeopleGrid>
                         {people.map((person) => (
                             <PersonTile
+                                key={person.id}
                                 name={person.name}
                                 poster={person.profile_path}
                             />

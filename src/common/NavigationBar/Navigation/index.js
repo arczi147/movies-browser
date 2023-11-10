@@ -12,24 +12,28 @@ import {
 const Navigation = () => {
 	const dispatch = useDispatch();
 
-	const onHeaderClick = () => {
+	const resetPageState = () => {
 		dispatch(goToTheFirstPage());
 	};
 
 	return (
 		<StyledNavigation>
 			<Header to="/">
-				<Logo onClick={onHeaderClick} />
-				<Caption onClick={onHeaderClick}>
+				<Logo onClick={resetPageState} />
+				<Caption onClick={resetPageState}>
 					Movies Browser
 				</Caption>
 			</Header>
 			<List>
 				<li>
-					<PageLink to="/movies">Movies</PageLink>
+					<PageLink to="/movies" onClick={resetPageState}>
+						Movies
+					</PageLink>
 				</li>
 				<li>
-					<PageLink to="/people">People</PageLink>
+					<PageLink to="/people" onClick={resetPageState}>
+						People
+					</PageLink>
 				</li>
 				{/* <li>
 					<PageLink to="/person">Person</PageLink>
