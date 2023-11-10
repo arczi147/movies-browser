@@ -12,7 +12,7 @@ import {
 import { GlobalWrapper } from "../../common/GlobalWrapper/styled";
 import { usePopularPeople } from "./usePopularPeople";
 import Loading from "../../common/Loading";
-import Error from "../movieList/Error";
+import Error from "../../common/Error";
 import { useDispatch, useSelector } from "react-redux";
 
 const PopularPeople = () => {
