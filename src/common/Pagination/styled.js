@@ -18,6 +18,10 @@ export const First = styled(PaginationButton)`
         background-color: ${({ theme }) => theme.color.mystic};
         cursor: default;
     }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        margin-right: 8px;
+    };
 `;
 
 export const Previous = styled(PaginationButton)`
@@ -30,16 +34,30 @@ export const Previous = styled(PaginationButton)`
 `;
 
 export const PrevVector = styled(PrevIcon)`
+    width: 7px;
+    height: 11px;
+
     path {
         fill: ${props => (props.disabled ? "#7E839A" : "#0044CC")}; 
     }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        width: 5px;
+        height: 8px;
+    };
 `;
 
 export const PageNumberContainer = styled.div`
-    margin: 0 24px 0 24px;
+    margin: 0 24px;
     display: inline-flex;
     gap: 8px;
     font-size: 16px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        font-size: 10px;
+        margin: 0 8px;
+        gap: 2px;
+    };
 `;
 
 export const Page = styled.p`
@@ -66,6 +84,10 @@ export const Next = styled(PaginationButton)`
         background-color: ${({ theme }) => theme.color.mystic};
         cursor: default;
     }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        margin-right: 8px;
+    };
 `;
 
 export const Last = styled(PaginationButton)`
@@ -78,7 +100,15 @@ export const Last = styled(PaginationButton)`
 `;
 
 export const NextVector = styled(NextIcon)`
+    width: 7px;
+    height: 11px;
+
     path {
         fill: ${props => (props.disabled ? "#7E839A" : "#0044CC")}; 
     }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        width: 5px;
+        height: 8px;
+    };
 `;

@@ -12,11 +12,11 @@ import { useState, useEffect } from "react";
 
 const PersonTile = ({ imagePerson, name, birthDate, birthPlace, description }) => {
 
-    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 979);
+    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 1140);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsWideScreen(window.innerWidth > 979);
+            setIsWideScreen(window.innerWidth > 1140);
         }
 
         window.addEventListener('resize', handleResize);

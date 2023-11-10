@@ -17,6 +17,6 @@ export const Wrapper = styled.div`
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
       display: flex;
       flex-direction: column;
-      padding: 0 16px;
+      padding: 18px 16px;
     };
 `;

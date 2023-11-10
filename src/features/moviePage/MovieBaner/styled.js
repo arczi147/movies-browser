@@ -56,7 +56,7 @@ export const Title = styled.h1`
 		margin-bottom: 12px;
 	}
 
-	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
 		font-size: 24px;
 		margin-bottom: 5.5px;
 	}
@@ -64,7 +64,7 @@ export const Title = styled.h1`
 
 export const Stats = styled.div`
 	display: flex;
-	max-width: 180px;
+	max-width: 190px;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -109,7 +109,7 @@ export const Rating = styled.p`
 	}
 `;
 
-export const RatingScale = styled.p`
+export const RatingMax = styled.p`
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 120%;
