@@ -6,3 +6,5 @@ export const imageURL = "https://image.tmdb.org/t/p/original";
 export const popularMoviesURL = `${URL}/movie/popular?api_key=${key}&language=en-US`;
 
 export const genresURL = `${URL}/genre/movie/list?api_key=${key}&language=en`;
+
+export const popularPeopleURL = `${URL}/person/popular?api_key=${key}&language=en-US`;
