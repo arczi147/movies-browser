@@ -10,7 +10,7 @@ const Error = () => (
             <Info>
                 Please check your network connection<br />and try again
             </Info>
-            <Button>
+            <Button to="/">
                 Back to home page
             </Button>
         </ErrorMessage>

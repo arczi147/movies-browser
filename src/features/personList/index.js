@@ -14,6 +14,7 @@ import { usePopularPeople } from "./usePopularPeople";
 import Loading from "../../common/Loading";
 import Error from "../../common/Error";
 import { useDispatch, useSelector } from "react-redux";
+import { GridWrapper } from "../../common/GridWrapper/styled";
 
 const PopularPeople = () => {
     const { popularPeople, loading, error } = usePopularPeople();
@@ -32,18 +33,23 @@ const PopularPeople = () => {
         const people = popularPeople.results;
 
         return (
-            <GlobalWrapper>
-                <StyledHeader>
-                    <Header text="Popular people" />
-                </StyledHeader>
-                <PeopleGrid>
-                    {people.map((person) => (
-                        <PersonTile
-                            name={person.name}
-                            poster={person.profile_path}
-                        />
-                    ))}
-                </PeopleGrid>
+            <>
+                <GlobalWrapper>
+                    <StyledHeader>
+                        <Header text="Popular people" />
+                    </StyledHeader>
+                </GlobalWrapper>
+                <GridWrapper>
+                    <PeopleGrid>
+                        {people.map((person) => (
+                            <PersonTile
+                                key={person.id}
+                                name={person.name}
+                                poster={person.profile_path}
+                            />
+                        ))}
+                    </PeopleGrid>
+                </GridWrapper>
                 <Pagination
                     page={page}
                     onFirst={() => dispatch(goToTheFirstPage())}
@@ -51,11 +57,11 @@ const PopularPeople = () => {
                     onNext={() => dispatch(incrementPage())}
                     onLast={() => dispatch(goToTheLastPage())}
                 />
-            </GlobalWrapper>
+            </>
         )
 
     } catch {
-        <Error />;
+        return "";
     }
 };
 
