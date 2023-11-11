@@ -7,6 +7,8 @@ import {
 	NoPoster,
 	Info,
 	Title,
+	CharacterAndYearElements,
+	Character,
 	Year,
 	GenreTags,
 	Tag,
@@ -20,7 +22,7 @@ function formatNumber(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
 };
 
-const MovieTile = ({ id, poster, title, year, genre, rating, votes }) => (
+const MovieTile = ({ id, poster, title, character, year, genre, rating, votes }) => (
 	<Container to={`/movies/${id}`}>
 		{poster ? (
 			<Poster src={imageURL + poster} alt="Poster" />
@@ -30,7 +32,10 @@ const MovieTile = ({ id, poster, title, year, genre, rating, votes }) => (
 		<MovieDataContainer>
 			<Info>
 				<Title>{title ? title : "Unknown title"}</Title>
-				<Year>{year ? (new Date(year).getFullYear()) : ""}</Year>
+				<CharacterAndYearElements>
+					<Character>{character ? character : ""}</Character>
+					<Year>{year ? (new Date(year).getFullYear()) : ""}</Year>
+				</CharacterAndYearElements>
 				<GenreTags>
 					{genre ? (
 						genre.map((genreName, index) => (
