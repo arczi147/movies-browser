@@ -12,11 +12,14 @@ function App() {
 		<HashRouter>
 			<NavigationBar />
 			<Switch>
-        <Route path="/movies/:id">
-          <Movie />
-        </Route>
+				<Route path="/movies/:id">
+					<Movie />
+				</Route>
 				<Route path="/movies">
 					<PopularMovies />
+				</Route>
+				<Route path="/people/:id">
+					<Person />
 				</Route>
 				<Route path="/people">
 					<PopularPeople />
