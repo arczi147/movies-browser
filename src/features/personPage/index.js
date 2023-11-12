@@ -46,6 +46,7 @@ const Person = () => {
                     {cast.map((castMovie) => (
                         <MovieTile
                             key={castMovie.id}
+                            id={castMovie.id}
                             poster={castMovie.poster_path}
                             title={castMovie.title}
                             character={castMovie.character}
@@ -63,7 +64,8 @@ const Person = () => {
                 <MoviesGrid>
                     {crew.map((crewMovie) => (
                         <MovieTile
-                            key={crewMovie.id}
+                            key={crewMovie.credit_id}
+                            id={crewMovie.id}
                             poster={crewMovie.poster_path}
                             title={crewMovie.title}
                             character={crewMovie.character}
