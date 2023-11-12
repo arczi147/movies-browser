@@ -68,7 +68,7 @@ const Person = () => {
                             id={crewMovie.id}
                             poster={crewMovie.poster_path}
                             title={crewMovie.title}
-                            character={crewMovie.character}
+                            character={crewMovie.job}
                             year={crewMovie.release_date}
                             genre={crewMovie.genre_ids.map((id) =>
                                 genres.genres.find((genre) =>
