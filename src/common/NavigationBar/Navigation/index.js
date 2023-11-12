@@ -35,12 +35,6 @@ const Navigation = () => {
 						People
 					</PageLink>
 				</li>
-				{/* <li>
-					<PageLink to="/person">Person</PageLink>
-				</li>
-				<li>
-					<PageLink to="/noresult">NoResult</PageLink>
-				</li> */}
 			</List>
 		</StyledNavigation>
 	);
