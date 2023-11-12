@@ -6,7 +6,6 @@ export const PersonTileContainer = styled.div`
     background: ${({ theme }) => theme.color.white};
     padding: 40px;
     margin-top: 56px;
-    margin-bottom: 56px;
     gap: 40px;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {

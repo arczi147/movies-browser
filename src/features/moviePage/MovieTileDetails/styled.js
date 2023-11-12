@@ -3,28 +3,29 @@ import { ReactComponent as RatingStar } from "../../../images/rating.svg"
 
 export const Container = styled.div`
     max-width: 100%;
+    min-height: 544px;
     padding: 40px;
     margin: 0;
     gap: 40px;
     background: ${({ theme }) => theme.color.white};
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
-    display: flex;
-    flex-direction: row;
+
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        display: flex;
+        flex-direction: row;
         padding: 16px;
         gap: 16px;
         flex-wrap: wrap;
+        min-height: 201px;
     };
 `;
 
 export const MovieDataContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         gap: 8px;
+        display: flex;
+        flex-direction: column;
     };
 `;
 
@@ -33,24 +34,28 @@ export const Poster = styled.img`
     max-width: 312px;
     max-height: 464px;
     width: 100%;
-    margin: 0;
+    margin: 0 40px 0 0;
+    float: left;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         max-width: 114px;
         max-height: 169px;
+        margin: 0;
     };
 `;
 
 export const NoPoster = styled.img`
     border-radius: 5px;
-    max-width: 292px;
-    max-height: 434px;
+    max-width: 312px;
+    max-height: 464px;
     width: 100%;
-    margin: 0;
+    margin: 0 40px 0 0;
+    float: left;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        font-size: 13px;
-        width: 45%;
+        max-width: 114px;
+        max-height: 169px;
+        margin: 0;
     };
 `;
 
@@ -58,11 +63,11 @@ export const Year = styled.p`
     font-size: 22px;
     line-height: 120%;
     font-weight: 400;
-    margin: 0;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 13px;
         line-height: 130%;
+        margin: 0;
     };
 `;
 
@@ -71,7 +76,6 @@ export const MovieDateText = styled.span`
     font-size: 18px;
     font-weight: 400;
     line-height: 120%;
-    margin: 0;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		display: none;
@@ -82,11 +86,11 @@ export const MovieDate = styled.p`
     font-size: 18px;
     font-weight: 400;
     line-height: 120%;
-    margin: 0;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		font-size: 12px;
         line-height: 130%;
+        margin: 0;
 	}
 `;
 
@@ -94,25 +98,27 @@ export const DescriptionText = styled.p`
     font-size: 20px;
     font-weight: 400;
     line-height: 160%;
-    margin: 0;
+    margin-bottom: 0;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		font-size: 14px;
+        margin: 0;
 	}
 `;
 
 export const GenreTags = styled.ul`
     list-style: none;
-    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 16px;
     padding: 0;
+    margin: 24px 0;
     
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         gap: 8px;
+        margin: 0;
     };
 `;
 
@@ -138,6 +144,10 @@ export const Stats = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 8px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        margin-top: auto;
+    };
 `;
 
 export const RatingIcon = styled(RatingStar)`
