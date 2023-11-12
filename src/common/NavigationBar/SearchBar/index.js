@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 const SearchBar = () => {
 	const location = useLocation();
-	const moviesPage = location.pathname === "/movies";
+	const moviesPage = location.pathname.includes("/movies");
 
 	return (
 		<StyledSearchBar>
