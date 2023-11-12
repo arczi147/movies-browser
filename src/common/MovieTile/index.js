@@ -10,6 +10,7 @@ import {
 	CharacterAndYearElements,
 	Character,
 	Year,
+	YearInParentheses,
 	GenreTags,
 	Tag,
 	Stats,
@@ -22,7 +23,7 @@ function formatNumber(number) {
 	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
 };
 
-const MovieTile = ({ id, poster, title, character, year, genre, rating, votes }) => (
+const MovieTile = ({ id, poster, title, character, year, yearInParentheses, genre, rating, votes }) => (
 	<Container to={`/movies/${id}`}>
 		{poster ? (
 			<Poster src={imageURL + poster} alt="Poster" />
@@ -35,6 +36,10 @@ const MovieTile = ({ id, poster, title, character, year, genre, rating, votes })
 				<CharacterAndYearElements>
 					<Character>{character ? character : ""}</Character>
 					<Year>{year ? (new Date(year).getFullYear()) : ""}</Year>
+					<YearInParentheses>
+						{yearInParentheses ?
+							`(${(new Date(yearInParentheses).getFullYear())})` : ""}
+					</YearInParentheses>
 				</CharacterAndYearElements>
 				<GenreTags>
 					{genre ? (

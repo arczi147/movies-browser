@@ -49,7 +49,7 @@ const PersonTile = ({ poster, name, birthDate, birthPlace, description }) => {
                     </BirthDate>
                     <BirthDate>
                         <BirthText>Place of birth:  </BirthText>
-                        {birthPlace ? birthPlace : "Uknown"}
+                        {birthPlace ? birthPlace : "Unknown"}
                     </BirthDate>
                     {isWideScreen && <DescriptionText>{description}</DescriptionText>}
                 </PersonDataContainer>
