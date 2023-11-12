@@ -13,6 +13,7 @@ export const PersonTileContainer = styled.div`
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		flex-wrap: wrap;
 		gap: 16px;
+        padding: 16px;
 	}
 `;
 
