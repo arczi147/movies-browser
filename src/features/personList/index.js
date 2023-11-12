@@ -44,6 +44,7 @@ const PopularPeople = () => {
                         {people.map((person) => (
                             <PersonTile
                                 key={person.id}
+                                id={person.id}
                                 name={person.name}
                                 poster={person.profile_path}
                             />

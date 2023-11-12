@@ -79,6 +79,24 @@ export const Title = styled.h2`
   	};
 `;
 
+export const CharacterAndYearElements = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 5px;
+`;
+
+export const Character = styled.p`
+	font-size: 16px;
+  	line-height: 150%;
+  	font-weight: 400;
+  	color: ${({ theme }) => theme.color.waterloo};
+  	margin: 0;
+
+  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    	font-size: 13px;
+  	};
+`;
+
 export const Year = styled.p`
   	font-size: 16px;
   	line-height: 150%;
@@ -159,7 +177,7 @@ export const Votes = styled.p`
   	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     	font-size: 13px;
   	};
-`; 
+`;
 
 export const MoviesGrid = styled.div`
   	display: grid;

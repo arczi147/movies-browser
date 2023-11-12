@@ -63,6 +63,7 @@ const Movie = () => {
                         {cast.map((castPerson) => (
                             <PersonTile
                                 key={castPerson.id}
+                                id={castPerson.id}
                                 poster={castPerson.profile_path}
                                 name={castPerson.name}
                                 character={castPerson.character}
@@ -78,6 +79,7 @@ const Movie = () => {
                         {crew.map((crewPerson) => (
                             <PersonTile
                                 key={crewPerson.credit_id}
+                                id={crewPerson.id}
                                 poster={crewPerson.profile_path}
                                 name={crewPerson.name}
                                 character={crewPerson.job}

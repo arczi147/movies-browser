@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
 	height: 100%;
     width: 208px;
     background-color: ${({ theme }) => theme.color.white};
@@ -8,6 +9,7 @@ export const Container = styled.div`
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
     border-radius: 5px;
     transition: transform 0.3s ease;
+    text-decoration: none;
 
     &:hover {
     cursor: pointer;
@@ -59,6 +61,7 @@ export const Name = styled.p`
     font-weight: 500;
     line-height: 1.3;
     margin: 0;
+    color: ${({ theme }) => theme.color.woodsmoke};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 14px;

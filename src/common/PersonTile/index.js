@@ -2,8 +2,8 @@ import { Container, PersonDataContainer, PersonPhoto, NoPhoto, Name, Character }
 import { imageURL } from "../API/APIData";
 import noPhoto from "../../images/no-person.svg"
 
-const PersonTile = ({ name, character, poster }) => (
-    <Container>
+const PersonTile = ({ id, name, character, poster }) => (
+    <Container to={`/people/${id}`}>
         <PersonDataContainer>
             {poster ? (
                 <PersonPhoto src={imageURL + poster} alt="Famous person" />
@@ -17,7 +17,7 @@ const PersonTile = ({ name, character, poster }) => (
                 {character}
             </Character>
         </PersonDataContainer>
-    </Container>
+    </Container >
 );
 
 export default PersonTile;
