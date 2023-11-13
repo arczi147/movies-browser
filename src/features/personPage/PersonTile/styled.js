@@ -9,11 +9,12 @@ export const PersonTileContainer = styled.div`
     gap: 40px;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-		flex-wrap: wrap;
-		gap: 16px;
-        padding: 16px;
         display: flex;
         align-items: flex-start;
+        flex-wrap: wrap;
+		gap: 16px;
+        padding: 16px;
+        min-height: 148px;
 	}
 `;
 
