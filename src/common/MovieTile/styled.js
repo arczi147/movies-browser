@@ -82,7 +82,7 @@ export const Title = styled.h2`
 export const CharacterAndYearElements = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	grid-gap: 5px;
+	grid-gap: 0px;
 `;
 
 export const Character = styled.p`
@@ -90,7 +90,7 @@ export const Character = styled.p`
   	line-height: 150%;
   	font-weight: 400;
   	color: ${({ theme }) => theme.color.waterloo};
-  	margin: 0;
+  	margin: 0 5px 0 0 ;
 
   	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     	font-size: 13px;
@@ -107,6 +107,9 @@ export const Year = styled.p`
   	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     	font-size: 13px;
   	};
+`;
+
+export const YearInParentheses = styled(Year)`
 `;
 
 export const GenreTags = styled.ul`

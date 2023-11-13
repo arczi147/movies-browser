@@ -3,11 +3,11 @@ import {
     PersonTileContainer,
     Image,
     PersonDataContainer,
+    Name,
     BirthText,
     BirthDate,
     DescriptionText,
 } from "./styled";
-import { NameContainer } from ".././styled";
 import { useState, useEffect } from "react";
 import { imageURL } from "../../../common/API/APIData";
 
@@ -36,9 +36,7 @@ const PersonTile = ({ poster, name, birthDate, birthPlace, description }) => {
                     <Image src={noPhoto} alt="Logo" />
                 )}
                 <PersonDataContainer>
-                    <NameContainer>
-                        {name ? name : "Unknown name"}
-                    </NameContainer>
+                    <Name>{name ? name : "Unknown name"}</Name>
                     <BirthDate>
                         <BirthText>Date of birth: </BirthText>
                         {birthDate ? new Date(birthDate).toLocaleDateString(undefined, {
@@ -49,7 +47,7 @@ const PersonTile = ({ poster, name, birthDate, birthPlace, description }) => {
                     </BirthDate>
                     <BirthDate>
                         <BirthText>Place of birth:  </BirthText>
-                        {birthPlace ? birthPlace : "Uknown"}
+                        {birthPlace ? birthPlace : "Unknown"}
                     </BirthDate>
                     {isWideScreen && <DescriptionText>{description}</DescriptionText>}
                 </PersonDataContainer>
