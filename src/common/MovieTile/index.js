@@ -4,7 +4,6 @@ import {
 	Container,
 	MovieDataContainer,
 	Poster,
-	NoPoster,
 	Info,
 	Title,
 	CharacterAndYearElements,
@@ -28,7 +27,7 @@ const MovieTile = ({ id, poster, title, character, year, yearInParentheses, genr
 		{poster ? (
 			<Poster src={imageURL + poster} alt="Poster" />
 		) : (
-			<NoPoster src={noPoster} alt="Logo" />
+			<Poster src={noPoster} alt="Logo" />
 		)}
 		<MovieDataContainer>
 			<Info>

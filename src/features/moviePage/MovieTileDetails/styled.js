@@ -44,21 +44,6 @@ export const Poster = styled.img`
     };
 `;
 
-export const NoPoster = styled.img`
-    border-radius: 5px;
-    max-width: 312px;
-    max-height: 464px;
-    width: 100%;
-    margin: 0 40px 0 0;
-    float: left;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        max-width: 114px;
-        max-height: 169px;
-        margin: 0;
-    };
-`;
-
 export const Year = styled.p`
     font-size: 22px;
     line-height: 120%;

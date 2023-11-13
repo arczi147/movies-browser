@@ -4,8 +4,6 @@ import PopularMovies from "./features/movieList";
 import PopularPeople from "./features/personList";
 import Person from "./features/personPage";
 import Movie from "./features/moviePage";
-import NoResult from "./features/NoResult";
-import Error from "./common/Error";
 
 function App() {
 	return (
@@ -23,18 +21,6 @@ function App() {
 				</Route>
 				<Route path="/people">
 					<PopularPeople />
-				</Route>
-				<Route path="/person">
-					<Person />
-				</Route>
-				<Route path="/movie">
-					<Movie />
-				</Route>
-				<Route path="/noresult">
-					<NoResult />
-				</Route>
-				<Route path="/error">
-					<Error />
 				</Route>
 				<Route path="/">
 					<Redirect to="/movies" />

@@ -3,7 +3,6 @@ import {
     Container,
     MovieDataContainer,
     Poster,
-    NoPoster,
     Title,
     Year,
     MovieDate,
@@ -43,7 +42,7 @@ const MovieTileDetails = ({ poster, title, year, production, release, genre, rat
             {poster ? (
                 <Poster src={imageURL + poster} alt="Poster" />
             ) : (
-                <NoPoster src={noPoster} alt="Logo" />
+                <Poster src={noPoster} alt="Logo" />
             )}
             <MovieDataContainer>
                 <Title>{title ? title : "Unknown title"}</Title>
