@@ -52,7 +52,7 @@ const MovieTile = ({ id, poster, title, character, year, yearInParentheses, genr
 				{votes ? (
 					<>
 						<RatingIcon />
-						<Rating>{rating ? rating.toFixed(1) : "0"}</Rating>
+						<Rating>{rating ? rating.toFixed(1).replace(".", ",") : "0"}</Rating>
 					</>
 				) : (
 					""

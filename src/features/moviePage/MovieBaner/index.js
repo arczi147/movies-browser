@@ -31,7 +31,7 @@ const MovieBaner = ({ baner, title, rating, votes }) => (
 						{votes ? (
 							<>
 								<RatingIcon />
-								<Rating>{rating ? rating.toFixed(1) : "0"}</Rating>
+								<Rating>{rating ? rating.toFixed(1).replace(".", ",") : "0"}</Rating>
 								<RatingMax>/ 10</RatingMax>
 								<Votes>{formatNumber(votes) + " votes"}</Votes>
 							</>
