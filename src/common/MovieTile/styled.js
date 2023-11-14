@@ -129,7 +129,7 @@ export const Tag = styled.li`
 
 export const Stats = styled.div`
   	display: flex;
-  	align-items: flex-end;
+  	align-items: center;
   	margin-top: auto;
   	gap: 12px;
 
