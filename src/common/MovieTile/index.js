@@ -25,7 +25,7 @@ function formatNumber(number) {
 const MovieTile = ({ id, poster, title, character, year, yearInParentheses, genre, rating, votes }) => (
 	<Container to={`/movies/${id}`}>
 		{poster ? (
-			<Poster src={imageURL + poster} alt="Poster" />
+			<Poster src={imageURL + "w342" + poster} alt="Poster" />
 		) : (
 			<Poster src={noPoster} alt="Logo" />
 		)}

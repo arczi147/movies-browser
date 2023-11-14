@@ -6,7 +6,7 @@ const PersonTile = ({ id, name, character, poster }) => (
     <Container to={`/people/${id}`}>
         <PersonDataContainer>
             {poster ? (
-                <PersonPhoto src={imageURL + poster} alt="Famous person" />
+                <PersonPhoto src={imageURL + "w185" + poster} alt="Famous person" />
             ) : (
                 <PersonPhoto src={noPhoto} alt="Logo" />
             )}

@@ -40,7 +40,7 @@ const MovieTileDetails = ({ poster, title, year, production, release, genre, rat
     return (
         <Container>
             {poster ? (
-                <Poster src={imageURL + poster} alt="Poster" />
+                <Poster src={imageURL + "w342" + poster} alt="Poster" />
             ) : (
                 <Poster src={noPoster} alt="Logo" />
             )}
