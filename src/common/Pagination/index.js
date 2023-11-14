@@ -34,12 +34,12 @@ const Pagination = ({ onFirst, onPrev, page, onNext, onLast }) => {
             {page === 1 ? (
                 <>
                     <First disabled={true}>
-                        <PrevVector />
-                        {isWideScreen ? null : <PrevVector />}
+                        <PrevVector disabled={true}/>
+                        {isWideScreen ? null : <PrevVector disabled={true}/>}
                         {isWideScreen ? "First" : null}
                     </First>
                     <Previous disabled={true}>
-                        <PrevVector />
+                        <PrevVector disabled={true}/>
                         {isWideScreen ? "Previous" : null}
                     </Previous>
                 </>
@@ -69,12 +69,12 @@ const Pagination = ({ onFirst, onPrev, page, onNext, onLast }) => {
                 <>
                     <Next disabled={true}>
                         {isWideScreen ? "Next" : null}
-                        <NextVector />
+                        <NextVector disabled={true}/>
                     </Next>
                     <Last disabled={true}>
                         {isWideScreen ? "Last" : null}
-                        {isWideScreen ? null : <NextVector />}
-                        <NextVector />
+                        {isWideScreen ? null : <NextVector disabled={true}/>}
+                        <NextVector disabled={true}/>
                     </Last>
                 </>
             ) : (
