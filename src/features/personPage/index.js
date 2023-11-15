@@ -30,6 +30,8 @@ const Person = () => {
     try {
         const cast = personCredits.cast;
         const crew = personCredits.crew;
+        const crewLength = crew.length;
+        const castlength = cast.length;
 
         return (
             <GlobalWrapper>
@@ -41,7 +43,7 @@ const Person = () => {
                     birthPlace={popularPerson.place_of_birth}
                     description={popularPerson.biography}
                 />
-                <NameContainer>Movies - cast ({cast.length})</NameContainer>
+                <NameContainer>{castlength > 0 ? `Movies - cast (${cast.length})` : ""}</NameContainer>
                 <MoviesGrid>
                     {cast.map((castMovie) => (
                         <MovieTile
@@ -60,7 +62,7 @@ const Person = () => {
                         />
                     ))}
                 </MoviesGrid>
-                <NameContainer>Movies - crew ({crew.length})</NameContainer>
+                <NameContainer>{crewLength > 0 ? `Movies - crew (${crewLength})`  : ""}</NameContainer>
                 <MoviesGrid>
                     {crew.map((crewMovie) => (
                         <MovieTile
