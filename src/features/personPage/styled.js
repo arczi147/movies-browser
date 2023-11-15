@@ -8,7 +8,7 @@ export const NameContainer = styled.h1`
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		font-size: 20px;
-		font-weight: 500;
+		font-weight: 600;
 		line-height: 130%;
 	}
 `;
