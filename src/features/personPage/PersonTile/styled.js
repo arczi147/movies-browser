@@ -58,6 +58,18 @@ export const BirthText = styled.span`
 	}
 `;
 
+export const Span = styled.span`
+    &::before {
+        content: "Place of birth: ";
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+		&::before {
+            content: "Birth: ";
+        }
+	}
+`;
+
 export const BirthDate = styled.p`
     font-size: 18px;
     font-weight: 400;

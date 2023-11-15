@@ -5,6 +5,7 @@ import {
     PersonDataContainer,
     Name,
     BirthText,
+    Span,
     BirthDate,
     DescriptionText,
 } from "./styled";
@@ -38,7 +39,7 @@ const PersonTile = ({ poster, name, birthDate, birthPlace, description }) => {
                 <PersonDataContainer>
                     <Name>{name ? name : "Unknown name"}</Name>
                     <BirthDate>
-                        <BirthText>Date of birth: </BirthText>
+                        <BirthText><Span></Span></BirthText>
                         {birthDate ? new Date(birthDate).toLocaleDateString(undefined, {
                             day: '2-digit',
                             month: '2-digit',
