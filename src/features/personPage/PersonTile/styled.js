@@ -19,13 +19,15 @@ export const PersonTileContainer = styled.div`
 `;
 
 export const Image = styled.img`
-    max-width: 399px;
+    width: 399px;
+    height: 598px;
     border-radius: 5px;
     float: left;
     margin: 0 40px 0 0;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-		max-width: 116px;
+		width: 116px;
+        height: 174px;
         margin: 0;
 	}
 `;

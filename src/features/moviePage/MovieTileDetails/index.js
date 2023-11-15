@@ -3,7 +3,6 @@ import {
     Container,
     MovieDataContainer,
     Poster,
-    NoPoster,
     Title,
     Year,
     MovieDate,
@@ -41,9 +40,9 @@ const MovieTileDetails = ({ poster, title, year, production, release, genre, rat
     return (
         <Container>
             {poster ? (
-                <Poster src={imageURL + poster} alt="Poster" />
+                <Poster src={imageURL + "w342" + poster} alt="Poster" />
             ) : (
-                <NoPoster src={noPoster} alt="Logo" />
+                <Poster src={noPoster} alt="Logo" />
             )}
             <MovieDataContainer>
                 <Title>{title ? title : "Unknown title"}</Title>
@@ -71,7 +70,7 @@ const MovieTileDetails = ({ poster, title, year, production, release, genre, rat
                     {votes ? (
                         <>
                             <RatingIcon />
-                            <Rating>{rating ? rating.toFixed(1) : "0"}</Rating>
+                            <Rating>{rating ? rating.toFixed(1).replace(".", ",") : "0"}</Rating>
                             <RatingMax>/ 10</RatingMax>
                             <Votes>{formatNumber(votes) + " votes"}</Votes>
                         </>

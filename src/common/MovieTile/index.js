@@ -4,7 +4,6 @@ import {
 	Container,
 	MovieDataContainer,
 	Poster,
-	NoPoster,
 	Info,
 	Title,
 	CharacterAndYearElements,
@@ -26,9 +25,9 @@ function formatNumber(number) {
 const MovieTile = ({ id, poster, title, character, year, yearInParentheses, genre, rating, votes }) => (
 	<Container to={`/movies/${id}`}>
 		{poster ? (
-			<Poster src={imageURL + poster} alt="Poster" />
+			<Poster src={imageURL + "w342" + poster} alt="Poster" />
 		) : (
-			<NoPoster src={noPoster} alt="Logo" />
+			<Poster src={noPoster} alt="Logo" />
 		)}
 		<MovieDataContainer>
 			<Info>
@@ -53,7 +52,7 @@ const MovieTile = ({ id, poster, title, character, year, yearInParentheses, genr
 				{votes ? (
 					<>
 						<RatingIcon />
-						<Rating>{rating ? rating.toFixed(1) : "0"}</Rating>
+						<Rating>{rating ? rating.toFixed(1).replace(".", ",") : "0"}</Rating>
 					</>
 				) : (
 					""
