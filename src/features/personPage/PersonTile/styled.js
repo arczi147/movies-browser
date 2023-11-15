@@ -60,7 +60,7 @@ export const BirthText = styled.span`
 
 export const Span = styled.span`
     &::before {
-        content: "Place of birth: ";
+        content: "Date of birth: ";
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {

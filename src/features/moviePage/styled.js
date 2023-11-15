@@ -6,20 +6,13 @@ export const MovieWrapper = styled.div`
 
 export const Title = styled.h1`
     font-size: 36px;
-    line-height: 120%;
     font-weight: 600;
-    margin: 4.75% auto 2.4%;
+    line-height: 120%;
+	margin: 5% auto 2.5%;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 130%;
-    };
-    
-    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 130%;
-        margin: 21px auto 12px;
-    };
+	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 130%;
+	}
 `;
