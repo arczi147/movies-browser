@@ -44,21 +44,6 @@ export const Poster = styled.img`
     };
 `;
 
-export const NoPoster = styled.img`
-    border-radius: 5px;
-    max-width: 312px;
-    max-height: 464px;
-    width: 100%;
-    margin: 0 40px 0 0;
-    float: left;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        max-width: 114px;
-        max-height: 169px;
-        margin: 0;
-    };
-`;
-
 export const Year = styled.p`
     font-size: 22px;
     line-height: 120%;
@@ -164,7 +149,7 @@ export const RatingIcon = styled(RatingStar)`
 export const Rating = styled.p`
     font-size: 22px;
     font-weight: 500;
-    line-height: 130%;
+    line-height: 160%;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 13px;
@@ -175,7 +160,8 @@ export const Rating = styled.p`
 export const RatingMax = styled.p`
     font-size: 14px;
     font-weight: 400;
-    line-height: 120%;
+    line-height: 160%;
+
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         display: none;
@@ -185,12 +171,12 @@ export const RatingMax = styled.p`
 export const Votes = styled.p`
     font-size: 14px;
     font-weight: 400;
-    line-height: 120%;
+    line-height: 160%;
+
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 13px;
         color: ${({ theme }) => theme.color.waterloo};
-        line-height: 130%;
     };
 `; 
 
