@@ -19,6 +19,7 @@ import {
 } from "../../common/Pagination/paginationSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import NoResult from "./NoResult";
 
 
 const SearchResults = () => {
@@ -41,6 +42,12 @@ const SearchResults = () => {
 
     try {
         const output = searchResults.results
+
+        if (searchResults.total_results === 0) {
+            return (
+                <NoResult query={query} />
+            );
+        }
 
         return (
             <GlobalWrapper>

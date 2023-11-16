@@ -1,11 +1,11 @@
-import { GlobalWrapper } from "../../common/GlobalWrapper/styled";
-import Header from "../../common/Header";
+import { GlobalWrapper } from "../../../common/GlobalWrapper/styled";
+import Header from "../../../common/Header";
 import { StyledHeader, StyledBigCloud, StyledSmallCloud, NoResultImage, StyledPaperPlane, StyledPlaneTrack, Image } from "./styled";
 
-const NoResult = () => (
+const NoResult = ({ query }) => (
     <GlobalWrapper>
         <StyledHeader>
-            <Header text="Sorry, there are no results for “Muan”" />
+            <Header text={`Sorry, there are no results for "${query}"`} />
             <NoResultImage>
                 <Image>
                     <StyledBigCloud />
