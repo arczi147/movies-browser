@@ -1,14 +1,16 @@
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import {
 	StyledSearchBar,
 	Input,
 	Icon,
 } from "./styled";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { goToTheFirstPage } from "../../Pagination/paginationSlice";
 
 const SearchBar = () => {
 	const location = useLocation();
 	const history = useHistory();
+	const dispatch = useDispatch();
 	const moviesPage = location.pathname.includes("/movies");
 	const query = (new URLSearchParams(location.search)).get("query");
 
@@ -17,6 +19,7 @@ const SearchBar = () => {
 
 		if (target.value.trim() === "") {
 			searchParams.delete("query");
+			dispatch(goToTheFirstPage());
 
 			if (location.pathname.match(/\/(movies|people)\/\d+/)) {
 				const newPath = location.pathname.replace(
@@ -29,6 +32,7 @@ const SearchBar = () => {
 			}
 		} else {
 			searchParams.set("query", target.value);
+			dispatch(goToTheFirstPage());
 
 			if (location.pathname.match(/\/(movies|people)\/\d+/)) {
 				const newPath = location.pathname.replace(

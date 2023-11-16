@@ -64,7 +64,7 @@ export const Title = styled.h1`
 
 export const Stats = styled.div`
 	display: flex;
-	max-width: 187px;
+	max-width: 184px;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;

@@ -29,6 +29,7 @@ const SearchResults = () => {
     const page = useSelector(state => state.pagination.page)
     const query = (new URLSearchParams(location.search)).get("query")
     const moviesPage = location.pathname.includes("/movies");
+    const totalPages = searchResults.total_pages || 1;
 
     if (loading) {
         return <Loading />;
@@ -86,7 +87,8 @@ const SearchResults = () => {
                     onPrev={() => dispatch(decrementPage())}
                     onNext={() => dispatch(incrementPage())}
                     onFirst={() => dispatch(goToTheFirstPage())}
-                    onLast={() => dispatch(goToTheLastPage())}
+                    onLast={() => dispatch(goToTheLastPage(totalPages))}
+                    totalPages={totalPages}
                 />
             </GlobalWrapper>
         );

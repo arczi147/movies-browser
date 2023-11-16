@@ -14,7 +14,7 @@ import {
     PagesAmount,
 } from "./styled";
 
-const Pagination = ({ onFirst, onPrev, page, onNext, onLast }) => {
+const Pagination = ({ onFirst, onPrev, page, onNext, onLast, totalPages }) => {
     const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 767);
 
     useEffect(() => {
@@ -62,10 +62,10 @@ const Pagination = ({ onFirst, onPrev, page, onNext, onLast }) => {
                 <Page>Page</Page>
                 <PageNumber>{page}</PageNumber>
                 <Of>of</Of>
-                <PagesAmount>500</PagesAmount>
+                <PagesAmount>{totalPages}</PagesAmount>
             </PageNumberContainer>
 
-            {page === 500 ? (
+            {page === parseInt(totalPages) ? (
                 <>
                     <Next disabled={true}>
                         {isWideScreen ? "Next" : null}
