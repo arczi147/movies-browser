@@ -14,6 +14,7 @@ import {
 	Votes
 } from "./styled";
 import shadow from "../../../images/shadow.png";
+import noBaner from "../../../images/no-backdrop.svg";
 import { imageURL } from "../../../common/API/APIData";
 
 function formatNumber(number) {
@@ -36,7 +37,7 @@ const MovieBaner = ({ baner, title, rating, votes }) => {
 						alt="Shadow Frame"
 					/>
 					<Baner
-						src={baner ? (imageURL + "w1280" + baner) : shadow}
+						src={baner ? (imageURL + "w1280" + baner) : noBaner}
 						alt="Baner"
 						onLoad={handleImageLoad}
 					/>
