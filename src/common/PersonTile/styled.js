@@ -43,19 +43,6 @@ export const PersonPhoto = styled.img`
     }
 `;
 
-export const Placeholder = styled.div`
-    background: ${({ theme }) => theme.color.white};
-    width: 177px;
-    height: 264px;
-    border-radius: 5px;
-    margin-bottom: 4px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        width: 120px;
-        height: 178px;
-    }
-`;
-
 export const Name = styled.p`
     text-align: center;
     font-size: 22px;

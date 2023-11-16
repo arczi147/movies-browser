@@ -20,6 +20,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import NoResult from "./NoResult";
+import { useState, useEffect } from "react";
 
 
 const SearchResults = () => {
@@ -30,7 +31,32 @@ const SearchResults = () => {
     const page = useSelector(state => state.pagination.page)
     const query = (new URLSearchParams(location.search)).get("query")
     const moviesPage = location.pathname.includes("/movies");
-    const totalPages = searchResults.total_pages || 1;
+
+    const [debouncedSearchResults, setDebouncedSearchResults] = useState(searchResults);
+    const [debounceLoading, setDebounceLoading] = useState(false);
+
+    useEffect(() => {
+        setDebounceLoading(true);
+        const timeoutId = setTimeout(() => {
+            setDebouncedSearchResults(searchResults);
+            setDebounceLoading(false);
+        }, 400);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [searchResults]);
+
+    if (debounceLoading) {
+        return (
+            <GlobalWrapper>
+                <StyledHeader>
+                    <Header text={`Search results for "${query}"`} />
+                </StyledHeader>
+                <Loading />
+            </GlobalWrapper>
+        )
+    }
 
     if (loading) {
         return <Loading />;
@@ -41,9 +67,10 @@ const SearchResults = () => {
     }
 
     try {
-        const output = searchResults.results
+        const totalPages = debouncedSearchResults.total_pages || 1;
+        const output = debouncedSearchResults.results
 
-        if (searchResults.total_results === 0) {
+        if (debouncedSearchResults.total_results === 0) {
             return (
                 <NoResult query={query} />
             );
@@ -52,10 +79,7 @@ const SearchResults = () => {
         return (
             <GlobalWrapper>
                 <StyledHeader>
-                    <Header text={
-                        `Search results for "${query}" (${searchResults.total_results})`
-                    }
-                    />
+                    <Header text={`Search results for "${query}" (${searchResults.total_results})`} />
                 </StyledHeader>
                 {moviesPage ? (
                     <MoviesGrid>

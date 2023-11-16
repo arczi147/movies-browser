@@ -10,11 +10,9 @@ export const useSearchResults = () => {
 	const [error, setError] = useState(null);
 	const location = useLocation();
 	const query = (new URLSearchParams(location.search)).get("query")
-	const page = useSelector(state => state.pagination.page);
-	
+	const page = useSelector(state => state.pagination.page);	
 	const moviesPage = location.pathname.includes("/movies");
-	const movieOrPerson = moviesPage ? "movie" : "person";
-	
+	const movieOrPerson = moviesPage ? "movie" : "person";	
 	const fetchingURL =
 		`${URL}/search/${movieOrPerson}?api_key=${key}&query=${query}&page=${page}&language=en-US`;
 	

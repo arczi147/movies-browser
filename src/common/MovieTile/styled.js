@@ -42,18 +42,6 @@ export const Poster = styled.img`
   	};
 `;
 
-export const Placeholder = styled.div`
-	background: ${({ theme }) => theme.color.white};
-	border-radius: 5px;
-    width: 292px;
-  	height: 434px;
-
-  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    	width: 114px;
-		height: 169px
-  	};
-`;
-
 export const LogoImage = styled.img`
   	width: 120px;
   	height: 120px;
