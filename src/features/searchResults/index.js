@@ -59,7 +59,14 @@ const SearchResults = () => {
     }
 
     if (loading) {
-        return <Loading />;
+        return (
+            <GlobalWrapper>
+                <StyledHeader>
+                    <Header text={`Search results for "${query}"`} />
+                </StyledHeader>
+                <Loading />
+            </GlobalWrapper>
+        )
     }
 
     if (error) {
