@@ -40,7 +40,7 @@ const SearchResults = () => {
         const timeoutId = setTimeout(() => {
             setDebouncedSearchResults(searchResults);
             setDebounceLoading(false);
-        }, 400);
+        }, 1000);
 
         return () => {
             clearTimeout(timeoutId);
