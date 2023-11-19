@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { ReactComponent as BigCloud } from "../../images/big-cloud.svg";
-import { ReactComponent as SmallCloud } from "../../images/small-cloud.svg";
-import { ReactComponent as PaperPlane } from "../../images/paper-plane.svg";
-import { ReactComponent as PlainTrack } from "../../images/track.svg";
+import { ReactComponent as BigCloud } from "../../../images/big-cloud.svg";
+import { ReactComponent as SmallCloud } from "../../../images/small-cloud.svg";
+import { ReactComponent as PaperPlane } from "../../../images/paper-plane.svg";
+import { ReactComponent as PlainTrack } from "../../../images/track.svg";
 
 export const StyledHeader = styled.div`
     margin: 56px auto 24px;
