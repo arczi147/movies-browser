@@ -12,17 +12,28 @@ import {
 	decrementPage,
 	incrementPage,
 	goToTheLastPage,
-	goToTheFirstPage
+	goToTheFirstPage,
+	selectPage,
+	setCurrentPage
 } from "../../common/Pagination/paginationSlice";
 import { useSelector, useDispatch } from "react-redux";
-
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const PopularMovies = () => {
+	const location = useLocation();
 	const { popularMovies, loading, error } = usePopularMovies();
 	const { genres } = useGenres();
 	const dispatch = useDispatch();
-	const page = useSelector(state => state.pagination.page)
+	const page = useSelector(selectPage);
 
+	const searchParams = new URLSearchParams(location.search).get("page");
+	let pageToSet = searchParams ? parseInt(searchParams) : 1;
+
+    useEffect(() => {
+        dispatch(setCurrentPage(pageToSet))
+    }, [pageToSet, location.pathname]);
+		
 	if (loading) {
 		return <Loading />;
 	}

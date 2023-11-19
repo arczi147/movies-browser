@@ -18,6 +18,10 @@ const paginationSlice = createSlice({
         goToTheLastPage: state => {
             state.page = 500
         },
+        setCurrentPage: (state, action) => {
+            state.page = action.payload;
+            state.currentPage = state.page;
+        },
     },
 });
 
@@ -25,7 +29,11 @@ export const {
     incrementPage,
     decrementPage,
     goToTheFirstPage,
-    goToTheLastPage
+    goToTheLastPage,
+    setCurrentPage
 } = paginationSlice.actions;
+
+export const selectPaginationState = state => state.pagination;
+export const selectPage = state => selectPaginationState(state).page;
 
 export default paginationSlice.reducer;

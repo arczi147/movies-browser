@@ -13,9 +13,17 @@ import {
     Of,
     PagesAmount,
 } from "./styled";
+import { useLocation } from "react-router-dom";
 
 const Pagination = ({ onFirst, onPrev, page, onNext, onLast }) => {
     const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 767);
+    const location = useLocation();
+
+    useEffect(() => {
+        let newUrl; 
+        newUrl = `/#${location.pathname}?page=${page}`;
+        window.history.pushState({ page }, "", newUrl);
+    }, [page, location.pathname]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -34,12 +42,12 @@ const Pagination = ({ onFirst, onPrev, page, onNext, onLast }) => {
             {page === 1 ? (
                 <>
                     <First disabled={true}>
-                        <PrevVector />
-                        {isWideScreen ? null : <PrevVector />}
+                        <PrevVector disabled={true}/>
+                        {isWideScreen ? null : <PrevVector disabled={true}/>}
                         {isWideScreen ? "First" : null}
                     </First>
                     <Previous disabled={true}>
-                        <PrevVector />
+                        <PrevVector disabled={true}/>
                         {isWideScreen ? "Previous" : null}
                     </Previous>
                 </>
@@ -69,12 +77,12 @@ const Pagination = ({ onFirst, onPrev, page, onNext, onLast }) => {
                 <>
                     <Next disabled={true}>
                         {isWideScreen ? "Next" : null}
-                        <NextVector />
+                        <NextVector disabled={true}/>
                     </Next>
                     <Last disabled={true}>
                         {isWideScreen ? "Last" : null}
-                        {isWideScreen ? null : <NextVector />}
-                        <NextVector />
+                        {isWideScreen ? null : <NextVector disabled={true}/>}
+                        <NextVector disabled={true}/>
                     </Last>
                 </>
             ) : (
