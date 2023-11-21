@@ -16,5 +16,9 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: 'Poppins', sans-serif;
 		background: ${({ theme }) => theme.color.whisper};
 		margin: 0;
+
+		zoom: 0.8; 
+    -moz-transform: scale(0.8); 
+    -moz-transform-origin: 0 0;
 	}
 `;
