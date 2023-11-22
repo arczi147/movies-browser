@@ -12,7 +12,7 @@ import {
 	decrementPage,
 	incrementPage,
 	goToTheLastPage,
-	goToTheFirstPage
+	goToTheFirstPage,
 } from "../../common/Pagination/paginationSlice";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -61,7 +61,8 @@ const PopularMovies = () => {
 					onPrev={() => dispatch(decrementPage())}
 					onNext={() => dispatch(incrementPage())}
 					onFirst={() => dispatch(goToTheFirstPage())}
-					onLast={() => dispatch(goToTheLastPage())}
+					onLast={() => dispatch(goToTheLastPage(500))}
+					totalPages={500}
 				/>
 			</GlobalWrapper>
 		);

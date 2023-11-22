@@ -4,24 +4,19 @@ import PopularMovies from "./features/movieList";
 import PopularPeople from "./features/personList";
 import Person from "./features/personPage";
 import Movie from "./features/moviePage";
+import SearchResults from "./features/searchResults";
 
 function App() {
 	return (
 		<HashRouter>
 			<NavigationBar />
 			<Switch>
-				<Route path="/movies/:id">
-					<Movie />
-				</Route>
-				<Route path="/movies">
-					<PopularMovies />
-				</Route>
-				<Route path="/people/:id">
-					<Person />
-				</Route>
-				<Route path="/people">
-					<PopularPeople />
-				</Route>
+				<Route exact path="/movies" component={PopularMovies} />
+				<Route exact path="/people" component={PopularPeople} />
+				<Route path="/movies/search" component={SearchResults} />
+				<Route path="/people/search" component={SearchResults} />
+				<Route path="/movies/:id" component={Movie} />
+				<Route path="/people/:id" component={Person} />
 				<Route path="/">
 					<Redirect to="/movies" />
 				</Route>
