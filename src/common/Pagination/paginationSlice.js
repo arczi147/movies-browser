@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getPageFromURL } from "./getPageFromURL";
 
 const paginationSlice = createSlice({
     name: "pagination",
     initialState: {
-        page: 1,
+        page: getPageFromURL(),
     },
     reducers: {
         incrementPage: state => {
