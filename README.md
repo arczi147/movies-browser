@@ -1,6 +1,6 @@
 # **Movies Browser**
 
-*Powered by*&nbsp; [<img src="https://i.postimg.cc/bJ418m3C/TMDB-logo.png" alt="TMDB logo" width="92" height="12">](https://www.themoviedb.org/)
+*Powered by*&nbsp; [<img src="https://github.com/michal-owsiak/movies-browser/blob/main/src/images/tmdb-logo.png?raw=true" alt="TMDB logo" width="92" height="12">](https://www.themoviedb.org/)
 
 
 Welcome to the Movies Browser, your go-to destination for exploring a broad collection of movies and people in the film industry! This web application utilizes the power of [TMDB](https://www.themoviedb.org/) to fetch comprehensive data, allowing users to search and discover information about their favorite movies and the talented individuals behind them.
@@ -9,7 +9,7 @@ Welcome to the Movies Browser, your go-to destination for exploring a broad coll
 
 [https://michal-owsiak.github.io/movies-browser/](https://michal-owsiak.github.io/movies-browser/)
 
-![demo](https://i.postimg.cc/vZsPtYFm/movies-browser.gif)
+![demo](https://github.com/michal-owsiak/movies-browser/blob/main/src/images/movies-browser-demo.gif?raw=true)
 
 ## **Features**
 
