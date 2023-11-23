@@ -37,7 +37,7 @@ const MovieBaner = ({ baner, title, rating, votes }) => {
 						alt="Shadow Frame"
 					/>
 					<Baner
-						src={baner ? (imageURL + "w1280" + baner) : noBaner}
+						src={baner ? (imageURL + "original" + baner) : noBaner}
 						alt="Baner"
 						onLoad={handleImageLoad}
 					/>
