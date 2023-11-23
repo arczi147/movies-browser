@@ -20,10 +20,18 @@ const Pagination = ({ onFirst, onPrev, page, onNext, onLast, totalPages }) => {
     const location = useLocation();
 
     useEffect(() => {
-        let newUrl; 
-        newUrl = `/#${location.pathname}?page=${page}`;
+        let newUrl;
+        
+        if (location.pathname.includes("search")) {
+            const query = new URLSearchParams(location.search).get("query");
+            newUrl = `/#${location.pathname}?query=${query}&page=${page}`;
+        } else {
+            newUrl = `/#${location.pathname}?page=${page}`;
+        }
+    
         window.history.pushState({ page }, "", newUrl);
-    }, [page, location.pathname]);
+    }, [page, location.pathname, location.search]);
+    
 
     useEffect(() => {
         const handleResize = () => {
