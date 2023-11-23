@@ -13,9 +13,17 @@ import {
     Of,
     PagesAmount,
 } from "./styled";
+import { useLocation } from "react-router-dom";
 
 const Pagination = ({ onFirst, onPrev, page, onNext, onLast, totalPages }) => {
     const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 767);
+    const location = useLocation();
+
+    useEffect(() => {
+        let newUrl; 
+        newUrl = `/#${location.pathname}?page=${page}`;
+        window.history.pushState({ page }, "", newUrl);
+    }, [page, location.pathname]);
 
     useEffect(() => {
         const handleResize = () => {
