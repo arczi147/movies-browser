@@ -64,10 +64,10 @@ export const Title = styled.h1`
 
 export const Stats = styled.div`
 	display: flex;
-	max-width: 187px;
+	max-width: 184px;
 	flex-direction: row;
 	flex-wrap: wrap;
-	align-items: flex-start;
+	align-items: center;
 	gap: 7px;
 	margin: 0;
 
@@ -113,19 +113,19 @@ export const RatingMax = styled.p`
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 120%;
-	padding-top: 12px;
+	padding-top: 6px;
 	margin: 0;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		font-size: 14px;
 		margin: 0 6px 0 5px;
-		padding-top: 7px;
+		padding-top: 0;
 	}
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
 		font-size: 10px;
 		margin: 0 6px 0 0;
-		padding-top: 5px;
+		padding-top: 0;
 	}
 `;
 

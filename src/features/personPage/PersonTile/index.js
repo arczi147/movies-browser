@@ -32,7 +32,7 @@ const PersonTile = ({ poster, name, birthDate, birthPlace, description }) => {
         <>
             <PersonTileContainer>
                 {poster ? (
-                    <Image src={imageURL + poster} alt="Famous person" />
+                    <Image src={imageURL + "w500" + poster} alt="Famous person" />
                 ) : (
                     <Image src={noPhoto} alt="Logo" />
                 )}

@@ -42,17 +42,6 @@ export const Poster = styled.img`
   	};
 `;
 
-export const NoPoster = styled.img`
-  	border-radius: 5px;
-  	max-width: 292px;
-  	max-height: 434px;
-
-  	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    	font-size: 13px;
-    	width: 45%;
-  	};
-`;
-
 export const LogoImage = styled.img`
   	width: 120px;
   	height: 120px;
@@ -140,7 +129,7 @@ export const Tag = styled.li`
 
 export const Stats = styled.div`
   	display: flex;
-  	align-items: flex-end;
+  	align-items: center;
   	margin-top: auto;
   	gap: 12px;
 

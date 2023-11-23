@@ -68,7 +68,8 @@ const PopularPeople = () => {
                     onFirst={() => dispatch(goToTheFirstPage())}
                     onPrev={() => dispatch(decrementPage())}
                     onNext={() => dispatch(incrementPage())}
-                    onLast={() => dispatch(goToTheLastPage())}
+                    onLast={() => dispatch(goToTheLastPage(500))}
+                    totalPages={500}
                 />
             </>
         )

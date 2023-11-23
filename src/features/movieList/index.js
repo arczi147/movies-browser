@@ -72,7 +72,8 @@ const PopularMovies = () => {
 					onPrev={() => dispatch(decrementPage())}
 					onNext={() => dispatch(incrementPage())}
 					onFirst={() => dispatch(goToTheFirstPage())}
-					onLast={() => dispatch(goToTheLastPage())}
+					onLast={() => dispatch(goToTheLastPage(500))}
+					totalPages={500}
 				/>
 			</GlobalWrapper>
 		);
