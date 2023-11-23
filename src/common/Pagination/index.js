@@ -24,9 +24,9 @@ const Pagination = ({ onFirst, onPrev, page, onNext, onLast, totalPages }) => {
         
         if (location.pathname.includes("search")) {
             const query = new URLSearchParams(location.search).get("query");
-            newUrl = `/#${location.pathname}?query=${query}&page=${page}`;
+            newUrl = `/movies-browser/#${location.pathname}?query=${query}&page=${page}`;
         } else {
-            newUrl = `/#${location.pathname}?page=${page}`;
+            newUrl = `/movies-browser/#${location.pathname}?page=${page}`;
         }
     
         window.history.pushState({ page }, "", newUrl);
