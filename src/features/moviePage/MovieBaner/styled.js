@@ -8,7 +8,18 @@ export const Background = styled.div`
 export const BanerContainer = styled.div`
 	position: relative;
 	max-width: 1920px;
+	height: 774px;
 	margin: 0 auto 4.6%;
+
+	@media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
+		height: 578px;
+	}
+	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+		height: 382px;
+	}
+	@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+		height: auto;
+	}
 `;
 
 export const Shadow = styled.img`
