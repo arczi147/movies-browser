@@ -38,7 +38,6 @@ Welcome to the Movies Browser, your go-to destination for exploring a broad coll
 - Axios
 - Redux
 - Redux-Toolkit
-- Redux-Saga
 - Styled-Components
 - Styled-Normalize
 ```
